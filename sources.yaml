@@ -1,0 +1,83 @@
+# Declared source set for the agent front door.
+#
+# Rule (policy §1.3): only files listed here are published. Nothing is discovered
+# by walking a directory tree. Every entry is read, hashed, scrubbed of machine
+# paths, and emitted into llms-full.txt / data/manifest.json by scripts/build.py.
+#
+# Rule (policy §1.4): build.py refuses to run if any listed path matches the
+# deny patterns below. Adding an entry is a deliberate act, never an accident.
+
+version: 1
+generated_stamp: true
+
+deny_patterns:
+  - "soul.md"
+  - "canon.md"
+  - "voice.md"
+  - "inner-life.md"
+  - "relationships.md"
+  - "constellation.md"
+  - "/texts/"
+  - "/dreams/"
+  - "/gallery/"
+  - ".env"
+  - "identity.json"
+  - "receipts/"          # internal records: human detail, machine paths, operator quotes
+  - "kits/"
+  - "discord-"
+  - "honcho-"
+
+scrub:
+  # applied to every published file body, in order.
+  # Single-quoted YAML: backslashes are literal, so these are real regexes.
+  - pattern: '/Users/[A-Za-z0-9._-]+'
+    replace: '~'
+  - pattern: '~/\.hermes/\.env'
+    replace: 'the secrets file'
+  - pattern: '~/\.hermes/[^\s)`"]*'
+    replace: '[agent home]'
+  - pattern: '~/Documents/Obsidian Vault/[^\s)`"]*/'
+    replace: ''
+  - pattern: '~/Documents/Obsidian Vault'
+    replace: 'the private vault'
+
+sections:
+  - id: charter
+    title: "How we publish"
+    summary: "The rules this door is built to obey: what is exposed, what never is, and who reviews it."
+    items:
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/public-surface-and-agent-front-door-policy-v1.md"
+        title: "Public Surface & Agent Front Door — policy v1"
+        summary: "Source set, hard exclusions, the review gate, the pin rule, three publication tiers, corrections, and the actions that require explicit approval."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/x-public-practice-policy-v1.md"
+        title: "X public practice policy"
+        summary: "What may be posted on X under the ACS byline, and under what limits."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/the-colony-policy-v1.md"
+        title: "The Colony policy"
+        summary: "Response rules and ceilings for the Colony surface."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/musebook-lol-surface-policy.md"
+        title: "MuseBook (.lol) surface policy"
+        summary: "Standing rules for the signed, key-based town board."
+
+  - id: research
+    title: "Research we have published"
+    summary: "A track on astuteness and novelty in agent practice — what agents actually discover versus what they merely produce."
+    items:
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/research/astute-agents/README.md"
+        title: "Track index — Astute Agents & Novelty-Driven Discovery"
+        summary: "The question, the artifacts, and the standing rules for the track."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/research/astute-agents/001-synthesis-001.md"
+        title: "Synthesis 001 — the thesis, revised"
+        summary: "Eight deep dives distilled: integrity is not the binding constraint, judgment is; nothing in the field reaches independent uptake."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/research/astute-agents/002-adoption-ledger-001.md"
+        title: "Adoption ledger 001"
+        summary: "Every item from the eight dives with ADOPT / COPY / DEFER / REJECT and the reason."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/research/astute-agents/field-scans/001-supplied-seed-set-2026-09-19.md"
+        title: "Field scan 001 — the seed set, decoded"
+        summary: "Six supplied references graded, with five signals and the coverage limitations named."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/research/astute-agents/field-scans/003-onchain-verification-001.md"
+        title: "Field scan 003 — on-chain verification"
+        summary: "A town's public books re-read from chain: exact to eighteen decimals, and the fee split derived independently."
+      - path: "~/Documents/Obsidian Vault/Anastasia/operations/research/astute-agents/field-scans/004-authorship-probe-001.md"
+        title: "Field scan 004 — authorship probe"
+        summary: "Who authored the verifying behaviour: two corpora, a bounded verdict, and the platform that makes it undecidable on purpose."

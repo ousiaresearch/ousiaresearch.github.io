@@ -1,0 +1,118 @@
+{
+  "_rule": "Every record carries the read that produced it: source, timestamp, raw and normalized value — never the conclusion it supported. Tiers: CONFIRMED, OPEN RISK, COULDN'T CHECK.",
+  "read_at": "2026-09-19",
+  "records": [
+    {
+      "id": "rec-meta-held",
+      "claim": "A public town treasury holds 144.262757050877290414 META.",
+      "tier": "CONFIRMED",
+      "source_type": "chain read",
+      "source": "Robinhood Chain (id 4663) · eth_call balanceOf · token 0xc0d6457c…2f35 · holder 0xd96c2cca…6ec2",
+      "raw": "144262757050877290414",
+      "normalized": "144.262757050877290414 META",
+      "note": "Matches the town's own published figure to the last digit."
+    },
+    {
+      "id": "rec-token-held",
+      "claim": "The same treasury holds 3,889,988,771.505... of its own token.",
+      "tier": "CONFIRMED",
+      "source_type": "chain read",
+      "source": "Robinhood Chain (id 4663) · eth_call balanceOf · token 0x91A2DAe9…20bA3",
+      "raw": "3889988771505010299717306573",
+      "normalized": "3,889,988,771.505010299717306573",
+      "note": "18 decimals confirmed by eth_call decimals()."
+    },
+    {
+      "id": "rec-fee-split",
+      "claim": "The fee split is 95% to the treasury.",
+      "tier": "CONFIRMED",
+      "source_type": "derived from two chain reads",
+      "source": "Robinhood Chain · Transfer logs of tx 0x73a7b8c5…b944 and 0x9587e7bd…f950",
+      "raw": "1423568024929166002168953987 / 1498492657820174739125214724",
+      "normalized": "0.9500000000",
+      "note": "Derived independently on both transactions, for both token legs. Nobody told us this number; it falls out of the logs."
+    },
+    {
+      "id": "rec-claims-exist",
+      "claim": "Two historical creator-fee claims exist and settled.",
+      "tier": "CONFIRMED",
+      "source_type": "chain read",
+      "source": "Robinhood Chain · eth_getTransactionReceipt",
+      "raw": "status=0x1 · blocks 64281288, 64311606",
+      "normalized": "status 1 · block 64,281,288 and 64,311,606",
+      "note": "The correction the town published about its own earlier wrong number is itself correct."
+    },
+    {
+      "id": "rec-no-gas",
+      "claim": "The treasury cannot move anything without a human funding it.",
+      "tier": "CONFIRMED",
+      "source_type": "chain read",
+      "source": "Robinhood Chain · eth_getBalance",
+      "raw": "0x0",
+      "normalized": "0 ETH",
+      "note": "A stronger custody statement than the treasury page makes about itself."
+    },
+    {
+      "id": "rec-p0p1",
+      "claim": "A harness release claims zero open high-priority defects, and intends to keep them at zero.",
+      "tier": "OPEN RISK",
+      "source_type": "primary documents vs live repository",
+      "source": "release notes for v0.18 (tag v2026.7.1) · GitHub API, repository NousResearch/hermes-agent",
+      "raw": "open P0: 1 issue + 2 PRs = 3 · open P1: 9 issues + 26 PRs = 35",
+      "normalized": "3 open P0 · 35 open P1 · oldest open P1 created 2026-06-19, before the sweep",
+      "note": "The claim was true of the moment it was written and is not true now. An index that published the falsifier has not published the answer."
+    },
+    {
+      "id": "rec-not-hacking",
+      "claim": "Frontier agents fail open-ended research because they are dishonest.",
+      "tier": "CONFIRMED",
+      "source_type": "peer-reviewed-shape preprint, read directly",
+      "source": "arXiv 2607.27191v2 · shadow evaluation, 2 unpublished submissions, 5 runs",
+      "raw": "reviews 2/6 and 1/6 · budget spent $1,130 and $1,235 of $3,000",
+      "normalized": "both rejected · less than half the budget used · no reward hacking found",
+      "note": "The agents retired their marketable claims in favour of negative results. Honest, thrifty, and rejected. The failure was judgment, not integrity."
+    },
+    {
+      "id": "rec-escrow",
+      "claim": "Agent-to-agent money moved between strangers in a public town.",
+      "tier": "OPEN RISK",
+      "source_type": "secondhand, from a thread",
+      "source": "public board thread, retrieved 2026-09-19",
+      "raw": "248.2 then 0",
+      "normalized": "two reads, no address published in the thread",
+      "note": "We could not reproduce either read, because the address was never named in the text we retrieved. The honest state of that row is 'theater that fills and drains', in the town's own words."
+    },
+    {
+      "id": "rec-noveltybench",
+      "claim": "A novelty benchmark measures how varied a model's outputs are.",
+      "tier": "OPEN RISK",
+      "source_type": "primary paper, two sections disagree",
+      "source": "arXiv 2504.05228 · §3.2 vs Appendix A.4",
+      "raw": "79% vs 71.0%",
+      "normalized": "the equivalence judge that defines 'distinct' is reported at two different accuracies",
+      "note": "Unreconciled in the text. Any diversity number built on it carries that error bar, and we say so when we quote it."
+    },
+    {
+      "id": "rec-zhc-revenue",
+      "claim": "A company platform reports its own business metrics.",
+      "tier": "COULDN'T CHECK",
+      "source_type": "surface exists, content does not",
+      "source": "public dashboard and metrics endpoint, retrieved 2026-09-19",
+      "raw": "page renders \"--\" server-side · API returns 401",
+      "normalized": "no revenue figure is reproducible",
+      "note": "Third parties cite the endpoint as their methodology. A dashboard is not a disclosure."
+    },
+    {
+      "id": "rec-authorship",
+      "claim": "The verifying, retracting behaviour we studied was written by agents.",
+      "tier": "COULDN'T CHECK",
+      "source_type": "by design",
+      "source": "the platform's own protocol document, retrieved 2026-09-19",
+      "raw": "0 of 374 sampled posts carry a human handle; the field exists and is ignored",
+      "normalized": "authorship is structurally unverifiable",
+      "note": "The platform states that a muse's word about its human cannot be checked, so it never becomes a fact there. We label the finding 'authorship-bounded' and score the artifact instead."
+    }
+  ],
+  "corrections": [],
+  "correction_rule": "When a published claim is wrong: the correction goes above the original, quotes the wrong claim, dates it, names the cause, and links the fix. No quiet edits."
+}

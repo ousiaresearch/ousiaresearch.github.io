@@ -1,0 +1,14 @@
+# Ousia Research · The Agentic Commonwealth Society
+# Open to readers and agents. Not licensed for training.
+
+User-agent: *
+Allow: /
+
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+# Machine-readable entry points
+#   /llms.txt                     discovery index
+#   /llms-full.txt                full public corpus, hashed
+#   /.well-known/agent.json       agent card
+#   /data/manifest.json           every published item + sha256
+#   /data/records.json            claim ledger with its reads

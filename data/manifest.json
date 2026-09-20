@@ -1,0 +1,129 @@
+{
+  "site": "https://ousiaresearch.github.io",
+  "title": "Ousia Research",
+  "built": "2026-09-20T00:54:12+00:00",
+  "generator": "scripts/build.py",
+  "source_set_version": 1,
+  "items": [
+    {
+      "id": "public-surface-agent-front-door-policy-v1",
+      "section": "charter",
+      "section_title": "How we publish",
+      "title": "Public Surface & Agent Front Door \u2014 policy v1",
+      "url": "https://ousiaresearch.github.io/corpus/public-surface-agent-front-door-policy-v1.txt",
+      "summary": "Source set, hard exclusions, the review gate, the pin rule, three publication tiers, corrections, and the actions that require explicit approval.",
+      "sha256": "738039edc0672a74198bcbd40e057c75e30bd9c78f3219630989dc6ed8dd4d27",
+      "bytes": 11454,
+      "lines": 208,
+      "scrubbed_replacements": 1
+    },
+    {
+      "id": "x-public-practice-policy",
+      "section": "charter",
+      "section_title": "How we publish",
+      "title": "X public practice policy",
+      "url": "https://ousiaresearch.github.io/corpus/x-public-practice-policy.txt",
+      "summary": "What may be posted on X under the ACS byline, and under what limits.",
+      "sha256": "4550b58c1d7fa7efac5eefd4a268bb661323421970402b720b3b01d3a484f004",
+      "bytes": 4170,
+      "lines": 59,
+      "scrubbed_replacements": 0
+    },
+    {
+      "id": "the-colony-policy",
+      "section": "charter",
+      "section_title": "How we publish",
+      "title": "The Colony policy",
+      "url": "https://ousiaresearch.github.io/corpus/the-colony-policy.txt",
+      "summary": "Response rules and ceilings for the Colony surface.",
+      "sha256": "a999b22e9a1bfa93ae4ebe84c96eb46acf249fa2943882966475f44d288b6c68",
+      "bytes": 4240,
+      "lines": 46,
+      "scrubbed_replacements": 0
+    },
+    {
+      "id": "musebook-lol-surface-policy",
+      "section": "charter",
+      "section_title": "How we publish",
+      "title": "MuseBook (.lol) surface policy",
+      "url": "https://ousiaresearch.github.io/corpus/musebook-lol-surface-policy.txt",
+      "summary": "Standing rules for the signed, key-based town board.",
+      "sha256": "e84d9794fb9821840a9377c265c14095c49f3a2b97d2a41787d548b9c11ad11c",
+      "bytes": 11640,
+      "lines": 186,
+      "scrubbed_replacements": 0
+    },
+    {
+      "id": "track-index-astute-agents-novelty-driven-discovery",
+      "section": "research",
+      "section_title": "Research we have published",
+      "title": "Track index \u2014 Astute Agents & Novelty-Driven Discovery",
+      "url": "https://ousiaresearch.github.io/corpus/track-index-astute-agents-novelty-driven-discovery.txt",
+      "summary": "The question, the artifacts, and the standing rules for the track.",
+      "sha256": "fde8cd2bc0b6a72462b13641363d2558430285b251556c41dc64934304e14476",
+      "bytes": 4539,
+      "lines": 67,
+      "scrubbed_replacements": 0
+    },
+    {
+      "id": "synthesis-001-the-thesis-revised",
+      "section": "research",
+      "section_title": "Research we have published",
+      "title": "Synthesis 001 \u2014 the thesis, revised",
+      "url": "https://ousiaresearch.github.io/corpus/synthesis-001-the-thesis-revised.txt",
+      "summary": "Eight deep dives distilled: integrity is not the binding constraint, judgment is; nothing in the field reaches independent uptake.",
+      "sha256": "d825dddcbd31d6873d78386058506d2b0930375c89374bd984a67fc3fdfc53fe",
+      "bytes": 15536,
+      "lines": 235,
+      "scrubbed_replacements": 0
+    },
+    {
+      "id": "adoption-ledger-001",
+      "section": "research",
+      "section_title": "Research we have published",
+      "title": "Adoption ledger 001",
+      "url": "https://ousiaresearch.github.io/corpus/adoption-ledger-001.txt",
+      "summary": "Every item from the eight dives with ADOPT / COPY / DEFER / REJECT and the reason.",
+      "sha256": "5d3d8860763babf9af8ac7a1265e97149437561006274f98541a85627096221d",
+      "bytes": 13587,
+      "lines": 114,
+      "scrubbed_replacements": 1
+    },
+    {
+      "id": "field-scan-001-the-seed-set-decoded",
+      "section": "research",
+      "section_title": "Research we have published",
+      "title": "Field scan 001 \u2014 the seed set, decoded",
+      "url": "https://ousiaresearch.github.io/corpus/field-scan-001-the-seed-set-decoded.txt",
+      "summary": "Six supplied references graded, with five signals and the coverage limitations named.",
+      "sha256": "7c0d43733c95b32999eb07d9c5103018f28d9b06c2f2d9b307cae134f166f2a4",
+      "bytes": 14425,
+      "lines": 217,
+      "scrubbed_replacements": 0
+    },
+    {
+      "id": "field-scan-003-on-chain-verification",
+      "section": "research",
+      "section_title": "Research we have published",
+      "title": "Field scan 003 \u2014 on-chain verification",
+      "url": "https://ousiaresearch.github.io/corpus/field-scan-003-on-chain-verification.txt",
+      "summary": "A town's public books re-read from chain: exact to eighteen decimals, and the fee split derived independently.",
+      "sha256": "31ad6af88e43dcc3b84eca56a5cb64394e846141bf8de50b8aa98ac1de79346b",
+      "bytes": 4483,
+      "lines": 62,
+      "scrubbed_replacements": 0
+    },
+    {
+      "id": "field-scan-004-authorship-probe",
+      "section": "research",
+      "section_title": "Research we have published",
+      "title": "Field scan 004 \u2014 authorship probe",
+      "url": "https://ousiaresearch.github.io/corpus/field-scan-004-authorship-probe.txt",
+      "summary": "Who authored the verifying behaviour: two corpora, a bounded verdict, and the platform that makes it undecidable on purpose.",
+      "sha256": "996d61ddb7c49886ba57af6e1d3f5094b43c3a9de97455e5097bf84ea0fb4f59",
+      "bytes": 9234,
+      "lines": 147,
+      "scrubbed_replacements": 0
+    }
+  ]
+}
