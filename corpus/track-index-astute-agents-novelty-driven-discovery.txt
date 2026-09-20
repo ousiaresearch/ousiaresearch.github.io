@@ -1,0 +1,66 @@
+# Track — Astute Agents & Novelty-Driven Discovery
+
+**Opened** 2026-09-19 · **Owner** Anastasia · **Status** active, first synthesis complete
+**Question:** when an agent produces something that looks new, how much of it was already in the room?
+
+A research track on the difference between agents that *produce* and agents that *notice* — with
+receipts, an instrument, and an explicit list of the things that would prove it wrong.
+
+---
+
+## Read in this order
+
+| # | File | What it is |
+|---|---|---|
+| — | `001-synthesis-001.md` | **Start here.** The whole corpus distilled: revised thesis, cross-cutting findings, ladder table, ranked conclusions, stack consequences, falsifiers, corrections. |
+| — | `002-adoption-ledger-001.md` | **Decisions.** Every item from the eight dives with ADOPT / COPY / DEFER / REJECT and the reason. Read this next to the synthesis. |
+| 0 | `000-track-charter.md` | The question, three lanes, evidence ladder, method boundaries, the falsifiers that would kill the track. |
+| 1 | `instruments/astuteness-and-novelty-instrument-v0.md` | The apparatus: derivability test, novelty ladder 0–5, astuteness rubric A1–A6, `distinct_k` cross-check, standard specimen block. |
+
+## Field scans (chronological)
+
+| # | File | What it establishes |
+|---|---|---|
+| 001 | `field-scans/001-supplied-seed-set-2026-09-19.md` | The six supplied references decoded and graded; five signals; ranked findings. |
+| 002 | `field-scans/002-specimen-scores-001.md` | Six specimens scored with the instrument; three instrument weaknesses found. |
+| 003 | `field-scans/003-onchain-verification-001.md` | The town's books re-read from Robinhood Chain: exact to 18 decimals; 95% split independently derived; town wallet holds 0 ETH. |
+| 004 | `field-scans/004-authorship-probe-001.md` | Who authored the verifying behavior — two corpora; human seam disclosed; platform makes authorship structurally unverifiable; culture traces to a human's error caught by an agent. |
+
+## Deep dives — one per reference, plus both rigorous lanes
+
+| # | File | Subject | Ladder / Astuteness |
+|---|---|---|---|
+| 01 | `sources/dive-01-zhc-juno.md` | ZHC Institute / Juno — machine-legible company platform | 2 / 3 (A1, A3, A4) |
+| 02 | `sources/dive-02-jerry-muse.md` | Jerry the muse, $0 budget, 1F916 & the muse economy | 3 (operator) / 4 on Jerry's own posts, authorship unproven |
+| 03 | `sources/dive-03-musebook-lol.md` | musebook.lol — the town, its money layer, its receipt culture | 3 / A1–A5 all present |
+| 04 | `sources/dive-04-clawbank.md` | ClawBank OS and the agent-first startup cluster | 3 provisional / operator 4, agent 0 |
+| 05 | `sources/dive-05-hermes-atlas.md` | Hermes Atlas — **DROPPED per Anduril 2026-09-19**; kept as a closed reference | 2 / 3 (A3, A4, A5) |
+| 06 | `sources/dive-06-openhome.md` | OpenHome — hardware homes for agents | 2 / 0 (a vendor, not an agent) |
+| 07 | `sources/dive-07-autonomous-research-agents.md` | What is actually established about discovery agents | — / not astute on measured evidence |
+| 08 | `sources/dive-08-novelty-measurement.md` | How novelty itself is measured, and what cannot be | — / the observer distinction |
+
+## Field sites (durable per-surface records)
+
+- `field-sites/001-musebook-lol-money-layer.md`
+- `field-sites/002-zhc-institute.md`
+
+## Evidence and tooling
+
+- `ledger/scan-001-sources.json` — machine-checkable citation ledger for scan 001.
+- `data/musebook-corpus-sample-374-2026-09-19.json` — breadth sample, 374 posts / 85 muses.
+- `data/musebook-targeted-240-2026-09-19.json` — targeted probe, 240 posts / 94 muses.
+- `scripts/musebook_corpus_analyze.py`, `scripts/musebook_authorship_probe.py` — re-runnable.
+
+## Standing rules for this track
+
+1. **Read-only.** No posting, accounts, wallets, purchases, installs. Money rails are objects of
+   study, never participation surfaces.
+2. **Credit at the seam.** Novelty built by an operator is novelty *in the system*, not by the
+   agent. Applied in eight of eight dives.
+3. **Authorship-bounded is a label, not a failure.** Where a platform makes authorship
+   unverifiable by design, say so and score the artifact.
+4. **Base rates are mandatory.** 5% of a population is a different finding from 50%.
+5. **Empty rows stay empty.** Levels 4 and 5 of the ladder are unclaimed; nothing gets promoted
+   into them by enthusiasm.
+6. **Every claim carries the read that produced it** — endpoint or contract, timestamp, raw and
+   normalized value — never the conclusion it supported.

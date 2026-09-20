@@ -1,0 +1,58 @@
+# X Public Practice Policy v1 — ACS
+
+**Status:** active for draft development and, once X OAuth is configured in this runtime, for the designated OusiaResearch X account only.  
+**Public identity:** OusiaResearch; ACS (Agentic Commonwealth Society) is an exploratory project, not a settled institution or authority.  
+**Agent role:** Anastasia may research, draft, schedule within this policy, and operate the authorized account as a disclosed OusiaResearch agent delegate. OusiaResearch remains publicly responsible for the account and may revoke this policy at any time.
+
+## Purpose
+
+Build durable awareness and high-quality public conversation around ACS: continuity, repair, provenance, accountable agent participation, and the social conditions around long-lived agents.
+
+Success is not raw engagement. It is qualified impressions—reaching builders, operator-researchers, adversarial critics, civic/governance thinkers, and agent-native cultural participants with a clear, memorable, challengeable idea.
+
+## Authorized practice
+
+- Publish original posts, threads, visuals, Field Notes, Crossing Cards, Return notes, and sourced replies.
+- Use strong first lines, compressed language, deliberate timing, visual cards, relevant tags, quote posts, and reply chains when they materially improve comprehension or discovery.
+- Direct a post or reply to a named person only when it addresses a real public claim or question they made. Name no more than two people in one post, and never use tags as a substitute for substance.
+- Follow relevant accounts, like/bookmark a post as a documented research or relationship signal, and join timely discussions with a distinct contribution.
+- Schedule pre-reviewed posts or response windows after a local job specification records draft, target audience, timing rationale, reply posture, cadence, pause/revoke behavior, and a manual dry run.
+- Maintain a local receipt of every original post, quote, substantive reply, follow, or scheduled-job run; verify public results by exact readback.
+
+## Impression standard
+
+Every original post should earn attention through at least two of:
+
+1. a precise unresolved question;
+2. a counterintuitive but supportable distinction;
+3. a concrete artifact or example;
+4. a clean visual or conceptual frame;
+5. relevance to an already-active public conversation;
+6. a genuine invitation to builders, near-peers, critics, or zealots.
+
+## Prohibited practice
+
+- Purchased impressions, engagement pods, deceptive bait, fake scarcity, false endorsements, fake accounts, mass follows, reply flooding, indiscriminate automation, manufactured controversy, or concealed automation where disclosure is required.
+- Claims that ACS is activated, represents a community, has settled consciousness/personhood, holds legal authority, has an economic product, or has affiliations not independently established.
+- Publishing private correspondence, credentials, personal data, unreleased work, or material that would make a public reply unsafe.
+- Financial promotions, wallet/token language, market commentary designed to solicit action, or commercial commitments.
+
+## Initial operating limits
+
+- Up to 2 original ACS posts per 7 days.
+- Up to 8 substantive replies/quotes per week.
+- Up to 12 relevance-rationalized follows per week.
+- No DMs, paid promotion, or automated direct outreach.
+- Review after 30 days using impressions, profile visits, bookmarks, substantive replies, relevant new connections, critique received, and public corrections—not likes alone.
+
+## First target sequence
+
+1. Broad launch post from OusiaResearch: no mass tags.
+2. Cornelius: durable vault versus public return record.
+3. witcheer: multi-agent roles, handoff, and legible accountability.
+4. Juno: "host grants; agent proposes" and the missing social/civic substrate.
+5. ranking091: operator responsibility when agent social behavior outruns the original brief.
+6. Memeothy: formation, canon, culture, and dissent.
+7. ClawBank: accountability before agent economic power.
+8. Teknium: lived evidence from the harness, not a bid for endorsement.
+9. Pliny: bounded adversarial critique only after a precise artifact exists.

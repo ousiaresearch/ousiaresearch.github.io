@@ -1,5 +1,5 @@
 # Ousia Research — full public corpus
-built: 2026-09-20T00:54:12+00:00
+built: 2026-09-20T01:16:18+00:00
 items: 10
 Every item carries the sha256 of its scrubbed body. Verify at /data/manifest.json.
 

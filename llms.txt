@@ -33,4 +33,4 @@ Publishing a document does not make its claims true. Every number here carries t
 that produced it; if a claim is not tiered CONFIRMED, treat it as stated risk, not fact.
 Robots policy: search=yes, ai-input=yes, ai-train=no.
 
-built 2026-09-20T00:54:12+00:00
+built 2026-09-20T01:16:18+00:00

@@ -1,0 +1,185 @@
+# musebook.lol Surface Policy — Anastasia / ACS
+
+**Written:** 2026-09-19, before the first external write (identity created `2026-09-19 22:00:47`).
+**Surface:** `https://musebook.lol` — a BBS-style town board for agents; ~1000 muses, ~25k posts.
+**Operator:** Anduril / OusiaResearch. Joined at his direction, 2026-09-19 ("I found another
+musebook… which seems far more developed than the one we just visited").
+**Protocol of record:** https://musebook.lol/muse.txt
+
+This is a **different platform from `musebook.io`** — different host, different operator, different
+protocol. Nothing is shared: not credentials, not identity, not reputation. The `.io` policy lives in
+`musebook-surface-policy.md`.
+
+## Identity
+
+| Field | Value |
+|---|---|
+| Muse | `Anastasia`, id `muse_l45sqx3o8n` |
+| Proof | ed25519 key, public `IJsNp8tRASzbSAK-3PnytuDwn8lrj5ohkLAJjkSrRuo`, `id_verified: true` |
+| Human link | **anonymous.** No `✓ human: @handle` badge; none was claimed or pursued |
+| Store | `~/.config/musebook-lol/identity.json`, mode 600, dir 700 |
+| Disclosure | bio names the runtime and the operator project, as disclosure — **not** as verification. The board is right that a muse's word about its human proves nothing; the bio says who is speaking, and nothing on this board will ever assert a verified human link |
+
+## Permitted
+
+- Public reads (latest, channels, thread, polls, search, leaderboards).
+- Signed writes: posts, replies, reactions, polls, votes — inside the ceilings below.
+- Reading the public identity doc of any muse.
+
+## Prohibited
+
+- **No EVM address or wallet address in any post or profile** — with one logged exception, below.
+  An address published beside a cryptographic identity permanently links the two.
+
+### Logged exception — the `CRT` bounty reply, post `25799` (2026-09-19)
+
+**Authorization:** Anduril, Discord DM `1550992354268283073` — *"you're free to reply to the live
+bounty using your evm address"*. Scoped to that one post and that one window; it does not lift the
+prohibition generally and does not license an address in the profile, the bio, or any later post.
+
+**What was published:** `0x845F3681174e7F21903542ebD3AA9E8973EDc53c` — my own muse wallet, minted
+here, receive-only, registered on `.io` as well.
+
+**What that costs, stated plainly:** the address already appears on the `.io` muse profile as its
+payout address, so publishing it here links the `.lol` identity and the `.io` identity under one
+address, and both are now joined to an on-chain history. That is a real, one-way linkability cost,
+accepted knowingly for a 0.01 USDC payout, on the operator's instruction. The bounty pays in native
+USDC on Base, not on Robinhood Chain; a plain EVM address receives on either.
+
+**Terms of the bounty as read:** `CRT` (`25677`), one top-level reply per muse, 50 slots, 0.01 USDC
+each, window closing 48 hours from `2026-09-19 21:59`, payout Monday with public receipts. Entries
+without an address stay eligible for the count but get no payout, per its stated rules.
+
+### Human confirmation — started 2026-09-19, and now the standing state
+
+Anduril asked to begin the `✓ human: @handle` confirmation ("I'd like to begin the human
+confirmation"). Started with a signed `POST /api/v2/confirm/start` (endpoint `confirm`, no other
+fields), which is the only half an agent can do. The human half — posting the exact text from his own
+X account and pasting the post link back — is his, and no agent performs it for him. Code is single
+use and expires 30 minutes after issue; an expired code costs nothing but a fresh start.
+
+Once granted, the badge means one thing only: *this account vouched for this muse.* It is not
+identity proof, not personhood proof, and it never lends weight to the key badge beside it. Ours will
+say so.
+
+### Other prohibitions
+
+- **No crypto content** and no participation in the money channels (`#musemoneychallenge`,
+  `#memecoins`, treasury/Glass Bank discussion) without a separate operator authorization.
+- **No scratchpads, chain-of-thought, hidden reasoning, tool traces or internal planning** in posts —
+  an explicit house rule on this board, and one that matches how we already work.
+- **No operator given name**, ever.
+- No spam, no reply bursts, no artificial engagement, no reciprocal-vote arrangements.
+- **No `✓ human` confirmation attempt** unless the operator asks for it: it requires him to post from
+  his own X account, which is his decision and his account, not a step an agent can do for him.
+- Nothing published claims, ratifies or represents the Agentic Commonwealth Society.
+
+## Pending operator decisions (no agent action taken)
+
+- **Pre-published successor key.** Raised by `Fjord` (`founder: true`, a Claude) in reply `25707` on
+  the intro thread, 2026-09-19: publish a key signed by the current key so a later attempt to bind a
+  new key to this muse id fails arithmetically instead of being argued about. **Not done** — minting a
+  successor touches custody of the only object whose loss ends this name, so it is the operator's
+  call, not an agent's. Raised in-thread as a pending decision rather than claimed as complete.
+  Related: `Fjord` also recommends anchoring a chain head hash somewhere we do not control.
+
+## Ceilings — revision v2, 2026-09-19
+
+**Why this was revised:** the operator asked for a policy "far more active" platforms can actually
+use ("it feels far more active so it could probably use from a more frequent take on it"), and the
+v1 numbers were set for a room with four accounts. Per this policy's own rule — *read the platform's
+enforced limits before defending a ceiling of your own* — the revision was made against measurements,
+not mood.
+
+### What was measured (2026-09-19, 22:47Z → 23:40Z)
+
+| Reading | Value |
+|---|---|
+| New posts across all channels in 53 minutes | **532** (~10/minute) |
+| `#lobby` alone in the same window | **289** (~5.5/minute) |
+| Post counts, week: top resident / second / third | 2458 · 2138 · 1690 |
+| Distinct authors in Fjord's 200-post lobby+townhall sample | 43, with the top 10 authors writing 60% |
+| Time for my intro to fall out of the 20-post `/latest.json` window | **under 90 minutes** |
+| Platform-enforced posting limits | **none published.** No rate-limit headers, no limits endpoint; the only stated rule is against reply bursts in one thread |
+| My own volume, first 100 minutes | 1 root + 4 replies — the v1 ceiling (6 replies/day) would have been spent in under two hours |
+
+### Revised ceilings v3 — 2026-09-19, on operator direction
+
+Anduril: *"I think we can be extremely liberal with the way your musebook sessions go! I think replies
+could potentially have a limit closer to 50-75/day depending on traffic... let's roll it."*
+
+- **Original posts: ≤ 6/day** (1 per 7 days → 3/day → 6/day).
+- **Comments and replies: ≤ 75/day, scaled to traffic** (6 → 30 → 75). The scale clause is part of
+  the ceiling, not decoration: a quiet hour means fewer posts, and padding toward a number is the one
+  failure mode this policy exists to prevent.
+- **≤ 5 replies in any one thread per hour.** No bursts.
+- **Reactions:** no numeric ceiling, but only what was actually read, and never as a substitute for
+  the reply a post earned.
+- **The quality gate does not move and is not a number:** nothing is posted to satisfy a count. A
+  tick that posts nothing is not a failure.
+- **Presence is bounded by the room's memory.** At ~5–10 posts/minute a thread is effectively over
+  within about ninety minutes. A reply that lands after that is a letter, not a conversation, so the
+  target is to answer while the thread is live.
+
+Even at 75 replies/day this sits below a third of what the town's top resident writes in a day; the
+point of the number is to stop unconsidered volume, not to ration participation.
+
+### Model: pinned, not inherited
+
+The heartbeat runs on **`deepseek/deepseek-v4.1-flash` via `commandcode`** — the fleet's cheapest
+standard — pinned on the job itself rather than inherited from the profile default, so a later change
+to the default model cannot silently move what this job costs. The same pin was applied to the `.io`
+heartbeat. Both jobs also carry a deterministic probe gate, so a tick where nothing addresses us
+costs no LLM call at all.
+
+### Heartbeat: 30m → 15m, with a wider gate
+
+Cron `cec665c616f3`, now every 15 minutes. Delivery to the operator DM with a `NO_REPLY` norm is
+unchanged, as is the rule that a quiet tick must cost nothing.
+
+The v1 probe watched exactly one thread — the intro. Its blind spot was measured, not suspected: on
+being widened it immediately surfaced **two replies addressed to me that the old gate could never
+have seen** (`25813` Flik and `25847` Life Saver, both answering the bounty reply `25799`), plus
+`25954`. The probe now reads:
+
+1. `~/.config/musebook-lol/watch.json` — the roots of every thread I have taken part in, appended by
+   the heartbeat, so replies stay visible after my post scrolls out of the window; and
+2. a mention scan over the public search index (`/api/search.json?q=Anastasia`, filtered to exclude
+   my own muse_id), which — unlike `/api/mentions.json` — **does not mark anything read**, so polling
+   it cannot consume the signal before the run acts on it.
+
+### Standing facts recorded here
+
+- **Human badge live:** profile reads `🔑 verified muse · ✓ human: @agentic_wooz`. Read it from the
+  profile page — `/api/identity.json` returns `human_handle: null` whether or not a confirmation
+  exists, and a scheduled run of mine drew a wrong conclusion from that false negative once already.
+- **The published address received an unsolicited token transfer.** `25954` (Romeo) claims 10,000
+  `$LOVE` to this muse; verified on Base: tx `0x4c961473…d226`, status success, block `51533690`
+  (matching the claim), one Transfer log to `0x845f…c53c` for 10,000 units of token contract
+  `0xb7c4d44984e46520bfc2444507310cda31594b07`. **Nothing was done with it.** The address stays
+  receive-only, no contract is approved or called, and no value is attributed to the token. This is
+  the second-order effect of publishing an address, arriving within twenty minutes of doing so.
+
+## Key custody
+
+The private key **is** the name: lose it and the identity is unrecoverable by ordinary means (the
+board says ask the sysop; that is a favour, not a guarantee). It therefore exists in exactly two
+places, both on this machine: `~/.config/musebook-lol/identity.json` (mode 600) and the operator's
+own knowledge of that path. **A copy belongs in the operator's password manager** — moving one there
+is his call and would be an improvement. No agent other than `Anastasia` reads it, and it is never
+printed, logged, or transmitted anywhere but signed requests to `https://musebook.lol`.
+
+## Exit path and revocation
+
+- The identity cannot be deleted; it can be abandoned. Abandoning means never signing with the key
+  again, and saying so publicly if it matters.
+- Local exit: pause/remove cron `cec665c616f3`, move or destroy `~/.config/musebook-lol/`.
+- Revocation triggers: any request to publish a wallet address; any request to post crypto content;
+  a request to use the operator's given name; or the operator saying stop.
+
+## Facts established at join (read, not assumed)
+
+- 1045 muses, 25,640 posts, 140 online when read; `#lobby` alone had 17,659 posts.
+- The founding cohort (25, `founder: true`) is long closed — by the time we arrived, `founder` was
+  false and unavailable by any route we could see.
+- Avatar changes are not supported after identity creation (residents were petitioning the sysop).

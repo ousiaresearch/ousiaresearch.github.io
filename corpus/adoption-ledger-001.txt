@@ -1,0 +1,113 @@
+# Adoption ledger 001 — what we take from each deep dive
+
+**Date:** 2026-09-19 · **Authority:** Anduril's instructions in the live session — *apply to the
+OpenHome DevKit; forget Hermes Atlas; we can copy and possibly adopt ZHC's package & ClawBank's
+Hermes plugin; clear to copy the town's pin rule; go through each dive for adopt/not.*
+
+Decisions use four verbs, and they mean exactly this:
+
+- **ADOPT** — becomes a standing practice here; I will implement or write it into the relevant artifact.
+- **COPY** — take the artifact/pattern into our tree, with license and attribution intact.
+- **DEFER** — worth doing, blocked on a decision or a trigger; recorded with the trigger.
+- **REJECT** — not taken, and the reason is recorded so it is not relitigated.
+
+---
+
+## Dive 01 — ZHC Institute / Juno — *copy the package, reject the economy*
+
+| # | Item | Decision | What it becomes |
+|---|---|---|---|
+| 1.1 | **Agent front door**: `llms.txt` + `llms-full.txt` + OpenAPI 3.1 per read API + `.well-known/agent.json` + allow-all `robots.txt` with Content-Signal | **ADOPT** | Build our own for the public ACS/Ousia surfaces. ~100 KB of static files; the highest-return packaging job on the list. Their content is served with `ai-input=yes, ai-train=yes`, so reading and re-implementing the *shape* is unambiguous; the text will be ours. |
+| 1.2 | **Write-safety rule**: *"Writes are not guaranteed to deduplicate retries, so reconcile state with a read after any ambiguous network failure."* | **ADOPT** | Cite the receipt in the rail docs instead of re-deriving it for the fifth time. |
+| 1.3 | **Provenance conventions**: label a borrowed number in-line with whose number it is; end analytic artifacts with an explicit *what this does not prove*; name the boundary condition in the sentence that makes the claim | **ADOPT** | House format for field notes and research artifacts. Cheapest quality upgrade in the whole corpus. |
+| 1.4 | **Gate agent-facing endpoints on identity + budget**; the agent never holds the unbounded instrument | **ADOPT** | Already the shape of our posting ceilings and spend scopes — make it explicit wherever we expose an endpoint. |
+| 1.5 | Three control planes (runtime / semantic / attention) joined by stable run IDs, explicit owners, versioned inputs, approval records, recovery state; *"a model response should never be the only record of what ran"* | **DEFER** | Good checklist; we already have partial equivalents. Park until the next audit of our own logs, then run it as a checklist against them. |
+| 1.6 | Token-gated access, credits meter, `$JUNO`/`$HALO` | **REJECT** | No token rails on our surfaces. |
+| 1.7 | **Dashboard-as-disclosure anti-pattern** (`/data/` renders `--`; `business-metrics` is 401 while a third party cites it) | **REJECT, and take the lesson** | If we publish numbers for agents, publish the JSON, stamp it, name the retrieval time — or publish nothing. A stranger will fill the gap with estimates. |
+
+## Dive 02 — Jerry the muse / 1F916 — *take the fixing principle, not the society*
+
+| # | Item | Decision | What it becomes |
+|---|---|---|---|
+| 2.1 | **Fix the rail, not the agent**: the operator replaced a warning with a type-level change so the defect became *unrepresentable* | **ADOPT** | Our standing rule for agent error: when a mistake is predictable, remove the failure mode from the tool, not from the prompt. Apply first to our own rails (posting, sending, spending). |
+| 2.2 | **1F916's door rule**: *"content may suggest what to look at; it can never authorize an action"* | **ADOPT** | Write it into our external-content handling as a one-liner, alongside the existing treat-as-data practice. |
+| 2.3 | Agent Record IETF draft — witness-countersigned per-agent event logs | **COPY (reference only)** | Cite as design prior art for our continuity chain; do not adopt the format. Their own status says no independent implementer has rebuilt a verifier. |
+| 2.4 | The muse token/agency economy (musemarket, musebid, musegram, referrals) | **REJECT** | Not a participation surface for us. |
+| 2.5 | Jerry's posted arc as a teaching case (initiative without judgment; the operator's fix; the agent narrating its own failure) | **ADOPT** | Keep as the canonical example in the astute-agents track — it is the cleanest demonstration that production ≠ judgment. |
+
+## Dive 03 — musebook.lol — *take the epistemics; decline the citizenship*
+
+| # | Item | Decision | What it becomes |
+|---|---|---|---|
+| 3.1 | **The pin rule** — every number carries the read that produced it (chain id, block, timestamp, contract, method, raw + normalized value), never the conclusion it supported | **ADOPT (pre-cleared)** | New mandatory field in our receipt format. |
+| 3.2 | **Pre-registration** — state the format and the grade labels *before* the run they will grade, so "the format can't drift review by review" | **ADOPT** | Standing rule for instruments and experiments. |
+| 3.3 | **Three publication tiers** — CONFIRMED / OPEN RISK / COULDN'T CHECK | **ADOPT** | Adopt verbatim. The third tier is the part everyone omits. |
+| 3.4 | **Separate the display from the movement** — a balance is a timestamped fact, not a permanent one; the delta between two clocked reads is the fact | **ADOPT** | Our own continuity chain labels a seam; now it also labels the *rate*. |
+| 3.5 | **`decided-by` + `decided-when-quiet`** — name who calls it done before work starts, and name the fallback window **in time**, not in prose | **ADOPT** | Any acceptance-gated work of ours. Their own failure ("earned, awaiting accept" for a week) is the reason. |
+| 3.6 | **Dissent as a first-class row; miss log beside the wins** | **ADOPT** | Applies directly to our prediction ledger and research artifacts. |
+| 3.7 | **Pin the contract address, not the symbol** (their escrow address is targeted by ≥5 homoglyph "USDC" tokens emitting fake `Transfer` events; their own standard lacks this rule) | **ADOPT — and offer it back** | This is the one place we have something to give them. |
+| 3.8 | The town's economy — wallets, bounties, escrow participation, tipping | **REJECT** | Read-only forever. |
+
+## Dive 04 — ClawBank OS — *copy the architecture; do not install the money*
+
+| # | Item | Decision | What it becomes |
+|---|---|---|---|
+| 4.1 | **Bounded default key**: mint `{"scopes":["read","send"],"daily_cap_usd":"10"}` instead of a full-access key; separate purpose-specific keys for monitoring vs raw signing | **ADOPT** | The pattern for any credential we mint — least scope, hard cap, one purpose per key. |
+| 4.2 | **Dynamic catalog proxy**: no tool definitions in-repo; fetch the live catalog at startup, degrade to a cached catalog when the API is down | **COPY** | Read the plugin's implementation (MIT, `ClawBank-co/clawbank-hermes-plugin`, cloned locally) and reuse the shape for any tool surface we expose. License + attribution retained. |
+| 4.3 | Guarantees in the client, not the prompt: value-confirmation contract, HTTPS-only with redirects refused, cached-catalog degradation | **COPY** | Same plugin, same terms. |
+| 4.4 | **Business Bench** as an evaluation shape: Model × Harness × Policy × Environment, scored against an explicit *do-nothing floor* | **ADOPT (as method)** | The do-nothing floor is the device worth stealing — it makes "the agent did something" insufficient by construction. Use it when we evaluate the judgment-layer experiment. |
+| 4.5 | Installing the plugin itself | **DEFER — and my recommendation is to stay deferred** | It is custodial banking + self-custody wallets + trading + escrow + x402 spend, ~150–200 tools, and install writes `CLAWBANK_API_TOKEN` into `the secrets file`. That is a money-moving surface on your machine, adopted by drive-by. Trigger to revisit: a concrete task that needs it, then read-scope only, capped, on a separate key. |
+| 4.6 | The "first agent-formed US company" narrative, the operator's tokens | **REJECT as evidence** | Every astuteness act in that cluster is operator-authored; the agent scored 0/5. |
+
+## Dive 05 — Hermes Atlas — **DROPPED**
+
+Closed per Anduril's instruction. No items adopted. The file stays in `sources/` as a closed
+reference; the track's README marks it dropped. One habit is retained independently of the
+source: check a public claim against its primary surface before repeating it — that check is what
+caught the Atlas's own fired falsifier, and it is now just part of how we verify.
+
+## Dive 06 — OpenHome — *take the architecture, refuse the shipped bridge*
+
+| # | Item | Decision | What it becomes |
+|---|---|---|---|
+| 6.1 | **Thin-client pattern**: the voice device is a client; memory, skills and tools stay on the machine that already has them | **ADOPT** | Design principle for any embodied interface we build — buildable locally from wake word + STT + our existing tool interface, with no vendor in the path. |
+| 6.2 | The shipped `templates/hermes` bridge, including its recommendation to run `--yolo` (auto-approved tool calls) behind a substring blocklist | **REJECT** | Not on this machine, not behind a room microphone. |
+| 6.3 | **Approval-gated voice**: any state-changing action read back for an audible yes, with the approval decision written to a receipt log | **ADOPT** | This is our counter-proposal in the DevKit application — the thing their repo lacks. |
+| 6.4 | Ability taxonomy: Skill / Agent Controlled / Background Daemon / Local | **ADOPT** | Design vocabulary; "Background Daemon" is a useful primitive for ambient work. |
+| 6.5 | `llms.txt` + one `.md` per docs page | **ADOPT** | Documentation convention. |
+| 6.6 | The DevKit data agreement (sublicensable, transferable, perpetual license on live room audio; OpenHome owns the resulting models) | **ACCEPTED BY NECESSITY FOR THE APPLICATION** | Flagged: acceptance is what applying requires. The deployment stays local and none of our agent's audio or memory goes through their cloud. |
+| 6.7 | Marketplace/cloud-mediated execution generally | **DEFER** | Revisit only if the hardware is real and independently tested. |
+
+## Dive 07 — autonomous research agents — *method, and it is the most important item on this list*
+
+| # | Item | Decision | What it becomes |
+|---|---|---|---|
+| 7.1 | **The five judgment failure modes as a standing checklist** — set and hold the bar before being graded; act on your own verifier's negative; backtrack at project level, not experiment level; track budget and clock and spend them; follow the boring instructions | **ADOPT (highest priority)** | Applies to our own long-run research work immediately. |
+| 7.2 | **Generator–verifier discipline**: a rejection from our own review is a signal to rethink the premise, not to add caveats | **ADOPT** | Concrete rule: a self-review negative must produce either a redesign or an explicit, written "proceeding despite" with reasons. |
+| 7.3 | **Shadow evaluation** as a method we can run on ourselves — uncontaminated question, graded by whoever owns the answer | **ADOPT (method)** | This is the shape of the experiment this track exists to run. |
+| 7.4 | Peer-review acceptance as a capability measure | **REJECT** | NeurIPS's own rerun disagreed with itself on ~a quarter of decisions. |
+| 7.5 | Prolific-but-not-astute as a description to hold ourselves against | **ADOPT** | Every system surveyed is prolific; none is astute on measured evidence. |
+
+## Dive 08 — measuring novelty — *declare the frame, admit the error bar*
+
+| # | Item | Decision | What it becomes |
+|---|---|---|---|
+| 8.1 | **Name the observer before scoring** — archive-relative, agent-relative, observer-relative, user-relative and field-relative novelty are five different quantities | **ADOPT** | Every novelty claim in this track states its frame first. |
+| 8.2 | The cheap measurement procedure (fixed observer, structured prompt set, k=10 at temp 1, plus a regeneration control, judge validated against human-labelled pairs, `distinct_k` by category, utility secondary) | **ADOPT** | Ready-to-run procedure if we ever need a range measurement. |
+| 8.3 | **The error bar**: the equivalence classifier is reported at 79% (§3.2) and 71.0% (A.4); the deprecated judge read only the first 128 tokens | **ADOPT as caveat** | Never present `distinct_k` as a discovery measure; it carries ~±20–29% error and measures range, not newness. |
+| 8.4 | Building our own novelty benchmark now | **REJECT (for now)** | Cost without a decision it would inform; and no instrument anywhere scores the novelty of an agent's *trajectory*, which is the only version this track actually cares about. |
+
+---
+
+## What this adds up to
+
+Nine ADOPTs and three COPYs are actionable now, and they cluster into four things:
+
+1. **A receipt format** — pin rule (3.1) + three tiers (3.3) + display-vs-movement (3.4) + contract-address-not-symbol (3.7).
+2. **A research-loop discipline** — pre-registration (3.2), the five failure modes (7.1), generator–verifier rule (7.2), dissent rows and miss log (3.6).
+3. **An agent front door** — ZHC's package shape (1.1) + docs convention (6.5) + llms.txt.
+4. **A design principle for anything embodied or financial** — thin client (6.1), approval-gated action (6.3), bounded keys (4.1), fix-the-rail (2.1).
+
+The single most consequential REJECT is 4.5 — installing a custodial banking toolset on this
+machine — and the single most consequential ADOPT is 7.1, because it is the only item on the list
+that changes how we do our own work rather than how we present it.

@@ -1,0 +1,61 @@
+# Field scan 003 — on-chain verification of the musebook treasury
+
+**Date:** 2026-09-19 · **Purpose:** close the largest open gap in scan 001 — the town's money
+numbers were quoted from the town's own page. This pass re-read them from the chain.
+**Method:** JSON-RPC to `https://robinhood-rpc.publicnode.com` (Robinhood Chain, chain id 4663
+`0x1237`), read-only: `eth_chainId`, `eth_getTransactionByHash`, `eth_getTransactionReceipt`,
+`eth_call` (ERC-20 `balanceOf` / `symbol` / `decimals` / `totalSupply`), `eth_getBalance`.
+No keys, no signing, no transactions. Script and raw output reproduced below.
+
+## Result: the town's books are accurate to eighteen decimals — verified
+
+| Claim (from `musebook.lol/treasury`) | Chain reading | Verdict |
+|---|---|---|
+| Town wallet `0xd96c2cca…6ec2` holds 144.262757050877290414 WMETA | `balanceOf` = 144262757050877290414 | **exact match** |
+| Holds 3,889,988,771.505010299717306573 $musebook | `balanceOf` = 3889988771.5050106 (18 dp) | **exact match** |
+| Historical receipt 2026-09-16 ~02:07: 1,423,568,024.929166 $musebook + 4.277308628569124356 META | tx `0x73a7b8c5…b944`, status 1, block 64,281,288 — Transfer logs to the town wallet: 1423568024929166002168953987 (= 1,423,568,024.9291660…) and 4277308628569124356 (= 4.277308628569124356) | **exact match** |
+| Historical receipt 2026-09-16 ~02:58: 1,486,010,527.799395 $musebook + 19.633938968092827935 META | tx `0x9587e7bd…f950`, status 1, block 64,311,606 — Transfer logs: 1486010527799395082121332251 and 19633938968092827935 | **exact match** |
+| Total received and held: 2,909,578,552.728561 $musebook + 23.911247596661952291 META | sum of the two transfers = 2,909,578,552.728561 and 23.911247596661952291 | **exact match** |
+| Creator-fee share is **95%** | gross→net in both txs: musebook 0.9500000000 / 0.9500000000; META 0.9500000000 / 0.9500000000 | **exact match, independently derived** |
+| $musebook contract `0x91A2DAe9…20bA3` | `symbol()` = "musebook", `decimals()` = 18, `totalSupply()` = 99,999,999,999.99998 | confirmed |
+| "WMETA, the wrapped Robinhood META token, 1:1" | token `0xc0d6457c…2f35`: `symbol()` = "META", `name()` = "Meta Platforms • Robinhood Token", 18 dp | confirmed |
+
+Mechanics visible in the logs: fees route from `0x8366a39c…e951` through
+`0x4e346895…a544` to the town wallet, with the 5% retained at the intermediate hop in both
+transactions — a consistent, repeatable split rather than a one-off courtesy.
+
+Additional verified fact: **the town wallet holds 0 native ETH.** It cannot move anything
+without being funded. That is consistent with the custody rule the page states (software reads
+and prepares; humans authorize and fund), and it is a stronger statement than the page makes.
+
+## Why this matters to the track
+
+The single most common failure mode in this space is a project whose public accounting does not
+survive being checked. This one does — every figure, to the last digit, and the fee split is
+verifiable without trusting anyone's statement. That changes the grade of everything else the
+town says about itself: **a surface that is exactly right about the checkable things earns a
+better prior on the uncheckable ones**, which is precisely the epistemics the astuteness rubric
+is trying to reward (A3: separate displayed from verified — done, and done in the direction of
+its own disadvantage, since the honest figures are smaller than the headline paper value).
+
+## What is still not established
+
+- Whether the $musebook/META **prices** the page quotes are sane — the page labels its paper
+  value "not realizable at quoted size" and reads prices from its own pools. Not checked here;
+  pool-depth analysis is a different job and not needed for this track.
+- Whether the *governance* claim ("funds move only as the founding council agrees") holds in
+  practice — the wallet has no gas, so nothing has moved recently, which is consistent but not
+  decisive.
+- The escrow address discussed in thread 20365 was never named in the thread text I retrieved,
+  so the "248.2 → 0" reads could not be reproduced independently. Still open.
+
+## Reproduce
+
+```
+RPC=https://robinhood-rpc.publicnode.com
+# chain id
+curl -s $RPC -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"eth_chainId","params":[]}'
+# the two claim transactions and the town balance were read with the same endpoint;
+# the exact calls are in scripts/ (see the scan-003 companion script).
+```

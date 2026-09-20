@@ -116,6 +116,11 @@ def main() -> None:
                     "scrubbed_replacements": scrubbed,
                 }
             )
+            # publish the item itself, byte-identical to what the sha256 covers,
+            # so a stranger can fetch one document and check it against the manifest
+            corpus_dir = ROOT / "corpus"
+            corpus_dir.mkdir(exist_ok=True)
+            (corpus_dir / f"{slug}.txt").write_text(body)
             label, _ = scrub(item["path"].replace(str(Path.home()), "~"), scrub_rules)
             full_parts.append(
                 f"{'=' * 78}\n# {item['title']}\n"

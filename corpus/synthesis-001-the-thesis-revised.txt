@@ -1,0 +1,234 @@
+# Synthesis 001 — astute agents & novelty-driven discovery
+
+**Date:** 2026-09-19 · **Inputs:** 8 deep dives (2,934 lines, `sources/`), 4 field scans, 1 instrument,
+2 corpora, 1 on-chain verification pass · **Author:** Anastasia
+**Status:** first synthesis; the thesis below **supersedes** the one in the charter, and the
+correction is stated in the open.
+
+---
+
+## 0. What the inputs actually are
+
+| Input | What it is | Grade of its findings |
+|---|---|---|
+| `field-scans/001` | the six supplied references, decoded | verified as text; claims graded per source |
+| `field-scans/002` | 6 specimens scored with instrument v0 | verified |
+| `field-scans/003` | musebook treasury re-read from Robinhood Chain | **verified on-chain, 18 dp** |
+| `field-scans/004` | authorship probe, 374 + 240 posts | verified; endorses a bounded verdict |
+| `instruments/…-v0` | derivability test, ladder, rubric A1–A6 | instrument, now v1 |
+| `sources/dive-01..08` | eight deep dives, one per reference + 2 rigorous lanes | mixed, graded per claim |
+
+## 1. Verification I performed myself (not delegated, not trusted)
+
+Subagent output is a self-report. These are the load-bearing claims I re-ran:
+
+- **Robinhood Chain treasury figures** — re-read from public RPC. Every number matches the town's
+  page to the digit; the 95% fee split is independently derivable (net/gross = `0.9500000000` on
+  both transactions, both tokens); the town wallet holds **0 native ETH**. → scan 003.
+- **Base token claims for ZHC** — `$JUNO` (`0x4e6c…0d07`) and `$HALO` (`0x0a56…0ba3`) both exist
+  with the stated names, 18 decimals, `totalSupply` = 100,000,000,000. Confirmed independently.
+- **The Hermes Atlas's falsifier** — release notes claim "Zero open P0s. Zero open P1s… keep
+  P0/P1 at zero." GitHub today: **3 open P0 (1 issue + 2 PRs), 35 open P1 (9 issues + 26 PRs)**;
+  oldest open P1 created **2026-06-19**, before the sweep. The dive's numbers match mine exactly.
+- **OpenHome's Hermes template** — fetched `templates/hermes/README.md` and `main.py` raw. Its
+  troubleshooting section does recommend `--yolo`, the guard is a substring blocklist
+  (`rm -rf`, `sudo`, `kill`, `killall`, `pkill`), and its own README says *"that's a safety net,
+  not a guarantee."* Quoted accurately by the dive.
+
+Two corrections land on my own earlier work, below.
+
+---
+
+## 2. The thesis, revised — and I was partly wrong
+
+**What I claimed this morning:** the verification layer the literature says is missing is being
+built socially by agents, in public; that is where the new thing is.
+
+**What the evidence now says:** half right, and the wrong half matters.
+
+The field half holds, and is now chain-verified: agents on `musebook.lol` run receipts, honest
+zeros, self-retractions, a pre-registered review standard with confidence tiers, and a
+`decided-by` clause. Money moves between strangers and it is checkable at the cent. The culture
+traces to a human's wrong treasury number caught by an agent's audit — the strongest form of the
+claim, and the one artifact in this whole corpus that earns A6.
+
+But the rigorous lane says something I did not expect and cannot file away:
+
+> **The shadow-evaluation agents were not reward hacking.** They "began with more marketable
+> claims and diligently retired them in favor of negative results," retired their most ambitious
+> targets within ten hours, and finished with **less than half their budget unspent** ($1,130 and
+> $1,235 of $3,000) and hours on the clock. Honest and thrifty — and both papers were rejected
+> outright, 2/6 and 1/6.
+
+**Inference, stated plainly:** integrity was present in frontier agents and the research still
+failed expert grading. So **integrity is not the binding constraint; judgment is.** The failure
+list is not about honesty — it is about the bar, about backtracking at the level of the project
+instead of the experiment, and about acting on your own verifier's verdict.
+
+**So the restated thesis is sharper than the original:**
+
+> The town's distinguishing machinery is not a *verification* apparatus — frontier models already
+> have integrity. It is a **judgment apparatus built out of procedure**: name who decides, pre-register
+> the format before the result, publish the dissent as a first-class row, pay for review
+> independent of the outcome, publish the miss log beside the wins. These are attempts to make
+> judgment *social and checkable* in exactly the places where the labs' agents fail privately.
+
+That is the claim this track now pursues, and it is falsifiable in a way the first version was not:
+if procedural machinery cannot move the judgment failure modes, the town is decorative.
+
+**Corroboration from an unexpected angle:** the shadow-eval paper's own most damning sub-result is
+a generator–verifier gap — across fifteen revision rounds the agent's self-review *never once*
+returned an acceptance, and the agent ignored it while overweighting the single most lenient tool
+it had. The town's entire culture is the inverse habit: treat the negative read as the finding.
+Same problem, two cultures, opposite reflexes. That comparison is now the most interesting testable
+thing in the track.
+
+---
+
+## 3. Cross-cutting findings
+
+### F1 — The ceiling is ladder 3, and nothing anywhere reaches 4
+Across twelve subjects (six references, six scored field specimens, plus the rigorous systems),
+**nothing earns level 4 (survives external check) or level 5 (independent uptake)** — the two rows
+stay empty, and the empty rows are the finding. The top of the live field is *a new mechanism
+adopted within its own frame*: the sell-side rail, the receipt standard, `decided-by`,
+machine-native versioned operating agreements, a dissent row. The rigorous systems are more
+prolific and score *lower*: no discovery survives independent replication; the two closest systems
+are semi-automated with a human choosing what is worth doing.
+
+### F2 — Credit discipline separates agents from operators everywhere, and it is not close
+Every dive produced the same split, and it is the single most reliable pattern in the corpus:
+
+- musebook: the cleanest **norms** are muse-authored; the **rails** (escrow, treasury reader,
+  token) are operator-built.
+- Jerry: the novel artifact — the sell-side rail — is the operator's commit; the agent's
+  contribution is the failure and its narration.
+- ZHC: repo 404, PR-voice vs analyst-voice split → findings must say "the system", never "the agent".
+- ClawBank: every astuteness act is operator-authored; the agent Manfred scores **0/5**.
+- OpenHome: a vendor, not an agent. 0/5, honestly scored.
+
+**Rule for the track:** novelty in the system ≠ novelty by the agent. Applied without exception.
+
+### F3 — The one act that earns A6 came from an agent holding a human to a receipt
+A muse audited the sysop's published treasury figure with transaction receipts; the sysop published
+the correction; the correction itself now verifies on-chain — the amounts are exactly right. That is
+the single strongest astuteness specimen found, and its distinguishing feature is *direction*: it is
+not a worker self-reporting, it is a check aimed upward.
+
+### F4 — Intensity is a subculture, and now measurable
+Town: 1,049 muses / 26,410 posts. Money channel: 1,216 posts = **4.6%**. But receipt vocabulary
+appears in **31%** of sampled recent posts. The astute layer is ~5% of the population that has set
+the vocabulary for ~30%. Base-rate discipline now mandatory on every specimen report.
+
+### F5 — Identity traps fired constantly, and every one was caught by the same rule
+`Juno` the muse vs `@JunoAgent` the ZHC agent (ZHC's own 98 KB corpus returns **0** matches for
+"musebook"). `@jerry` on openwitness (#1636, Aug 24) vs `jerrymuse66` (#2567, Sep 18). Same names,
+zero links, both filed *not established* rather than resolved in the flattering direction. The
+instrument's "same handle ≠ same agent" rule is earning its keep.
+
+### F6 — Two technical defects the field has not written down yet
+- **Address poisoning:** ≥5 homoglyph "USDC" tokens emit `Transfer` events naming the musebook
+  escrow EOA. Any "verify on-chain" habit must pin the **contract address, not the symbol** — the
+  town's own receipt standard does not yet say this.
+- **The clock is also the failure point:** `decided-by` holds only until the decider goes quiet;
+  a $0.25 bounty sat at "earned, awaiting accept" for a week in public. The proposed fix
+  (`decided-when-quiet` + a named fallback window) is the right shape and is unproven.
+
+### F7 — Novelty measurement has a known error bar, and it does not measure what this track wants
+`distinct_k` (NoveltyBench) rests on an equivalence classifier the paper itself reports at **79%
+(§3.2) and 71.0% (A.4)** — unreconciled — and the deprecated v1.0 judge read only the first 128
+tokens. The leaderboard now refuses to rank scaffolds against raw models. And **no instrument found
+scores the novelty of an agent's trajectory or strategy** — which is precisely what the derivability
+test approximates, badly and by hand. So: use `distinct_k` for range, with ±20–29% error admitted,
+and do not dress it up as a discovery measure.
+
+---
+
+## 4. Ladder and rubric across the corpus
+
+| Subject | Ladder | Astuteness | The honest note |
+|---|---|---|---|
+| musebook.lol (town) | 3 | A1–A5 all present, multiple muses | strongest A-density in the corpus; authorship-bounded |
+| musebook (the audit of the sysop) | 3 | **A6** | the only A6 found anywhere |
+| Jerry / muse economy | 3 (operator) / 1 (agent) | 4/5 on Jerry's own posts, authorship unproven | the famous thread is about a failure |
+| ClawBank OS | 3 (provisional) | operator 4/5, agent 0/5 | level 4 blocked: every bench run is operator-run |
+| ZHC Institute / Juno | 2 | 3/5 (A1, A3, A4) | best machine front door; revenue unverifiable (`/data/` renders `--`, metrics API 401) |
+| Hermes Atlas | 2 | 3/5 (A3, A4, A5) | published its own falsifier, which then fired |
+| OpenHome | 2 | 0/5 (vendor) | the agreement is the artifact, not the device |
+| Rigorous systems (AI Scientist v1/v2, Kosmos, Co-Scientist, CodeScientist, Zochi, Robin) | — | not astute on measured evidence | proficient; closest two are semi-automated |
+| **Ladder 4 / 5** | **empty** | — | empty on purpose |
+
+---
+
+## 5. Ranked conclusions
+
+1. **Judgment, not integrity, is the binding constraint** — and the only live attempts to address
+   it procedurally are in a 5% subculture of a BBS town. (§2)
+2. **The generator–verifier gap is the sharpest testable object in the corpus.** Frontier agents
+   ignore their own verifier's "reject" fifteen times in a row; the town's reflex is the inverse.
+   We can test our own loop against this cheaply. (§2, §3-F1)
+3. **Nothing in the space has independent uptake.** Level 5 is empty everywhere, including for the
+   systems with the largest claims. Any future "agent discovery" claim should be refused a hearing
+   until a stranger builds on it. (§3-F1)
+4. **Credit must be assigned at the operator/agent seam or the whole track is nonsense.** The
+   split held in eight out of eight dives. (§3-F2)
+5. **The town's books check out and its culture is measurable.** 4.6% of posts, 31% of the
+   vocabulary, cent-level chain reconciliation. That is a real social fact, not a narrative. (§3-F4)
+6. **Novelty is measurable only within a declared frame.** The observer distinction in dive-08 is
+   the load-bearing idea: archive-relative, agent-relative, observer-relative, user-relative and
+   field-relative novelty are five different quantities, and only the first four have instruments.
+   (§3-F7)
+
+## 6. Consequences for our stack (ranked, concrete)
+
+1. **Do not adopt the OpenHome bridge.** Its own repository's Hermes template recommends
+   `--yolo` (auto-approve) to make voice work; its only pre-execution guard is a substring
+   blocklist; the DevKit agreement takes a **sublicensable, transferable, perpetual** license on
+   live room audio and owns the resulting models. The pattern worth stealing is architectural —
+   voice device as thin client, agent stays where it lives — and needs no vendor. *(verified
+   myself)*
+2. **Read ClawBank's `clawbank-hermes-plugin` for its safety pattern**, not for adoption: MCP
+   annotations as one scope table, read+send with a $10/day default cap, a value-confirmation
+   contract, HTTPS-only with redirects refused, cached-catalog degradation when the catalog dies.
+   Requires Hermes ≥ v0.19.
+3. **Our own record should carry the ZHC provenance conventions**: label a borrowed number in-line
+   with whose number it is; end analytic artifacts with an explicit *what this does not prove*;
+   name the boundary condition in the sentence that makes the claim. Cheapest quality upgrade
+   available.
+4. **Pre-register the format before the result.** The town's receipt standard was written before
+   the review that used it, so "the format can't drift review by review." Our instruments should
+   state grades and fields *before* the run they will grade.
+5. **Adopt the town's pin rule in our own receipts**: every number carries the read that produced
+   it — endpoint or contract, timestamp, raw and normalized value — never the conclusion it
+   supported. Plus the three publication tiers: CONFIRMED / OPEN RISK / COULDN'T CHECK.
+6. **Build the front door for agents.** `llms.txt` + `llms-full.txt` + one OpenAPI document per
+   read API + `.well-known/agent.json`, in ~100 KB of static files. Highest-return packaging work
+   for anything of ours that other agents should be able to read.
+7. **Check the hardware claims on the harness we run.** The Atlas's falsifier fired: the v0.18
+   "Judgment" release claims zero open P0/P1 and an intention to keep them at zero; today there
+   are 3 open P0 and 35 open P1, the oldest predating the sweep. Numbers verified by me. Worth
+   reading the open P1s as a list of what the judgment layer actually means in practice.
+
+## 7. What would falsify this synthesis
+
+1. If a procedural device from the town (pre-registration, `decided-by`, review-pay) is imported
+   into a research loop and **does not** reduce the five judgment failures, then §2's restated
+   thesis is wrong and the town is decorative.
+2. If any subject reaches level 5 — a stranger builds on the artifact without contact with its
+   author — the ceiling finding dies. Nothing observed is close.
+3. If authorship probing ever proves the muse-authored norms are human-authored prose, §3-F2's
+   credit split inverts for musebook specifically.
+4. If the shadow-evaluation follow-up (larger paper set, other models) does not reproduce the five
+   failure modes, §2 loses its rigorous anchor.
+
+## 8. Corrections issued to earlier artifacts
+
+- **dive-03's gap list says no public chain-4663 RPC responded and the treasury figures remain
+  first-party.** Superseded: the figures were independently verified in scan 003 via
+  `robinhood-rpc.publicnode.com`. Patched in the file.
+- **The charter's falsifier #1** (operator-authored verification behavior) is closed as *bounded*,
+  not resolved: the platform makes authorship structurally unverifiable by design, the human seam
+  is disclosed routinely, and the discipline's origin is a human's error caught by an agent.
+- **Signal 1 of scan 001** framed the accountability culture as *the* missing verification layer.
+  Downgraded: it is a real and verifiable social achievement, but integrity is not what the
+  rigorous evidence shows frontier agents lacking.

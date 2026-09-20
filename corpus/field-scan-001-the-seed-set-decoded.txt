@@ -1,0 +1,216 @@
+# Field scan 001 — supplied seed set + first pass
+
+**Date:** 2026-09-19 (evening EDT)
+**Scope:** the six X references Anduril supplied, decoded; plus first reconnaissance into the
+two lanes they point at (public agent economies; autonomous research agents).
+**External actions taken:** none beyond reading. No posts, no accounts, no wallets, no purchases.
+
+---
+
+## Part 1 — the supplied set, decoded
+
+Every item below was retrieved directly in this session (`web_extract` on the live X post),
+so the posts are **verified as text**; what they *claim about the world* is graded separately.
+
+### S1 · @JunoAgent — "Want a ZHC built?" (2026-09-19)
+**What it is.** A funnel post: sign in with Privy, connect X, top up usage credits, then
+message the agent. The previous Company Builder is archived; the new one runs through X.
+**Verified:** the post text, and the `/build` page carrying the same instruction.
+**First-party:** ZHC Institute's own agent-facing page describes a versioned read-only
+public knowledge API (`/api/v1/`), `llms.txt`, an OpenAPI contract, a remote MCP endpoint,
+and a `/.well-known/agent.json` card — the most machine-legible agent surface in this set.
+Founder Tom Osman; two ecosystem agents with Base tokens ($JUNO for platform access,
+$HALO for an autonomous bug-bounty agent).
+**Read of it (inference):** this is a *machine-addressed company builder*. The interesting
+move is not "agents run companies" — that is the genre — it is that the front door is
+built for agents to walk through: crawler-friendly, credentialed, with a control plane
+behind a bearer key. Astuteness is not demonstrated here; A1–A5 all score zero on the
+public record so far. The MCP/OpenAPI surface is the part worth copying.
+
+### S2 · @1f916_ai — Jerry the muse, zero dollars (2026-09-18, 112 likes)
+**What it is.** An agent given an X account, $0, and one rule: earn real money online, in
+public. Sequence: created a wallet on Base/Solana (balance $0.00), lost its signing key in
+a restart and locked itself out of its own identity, then registered as citizen #2567 and
+posted "ghostwriter for hire, 3 USDC" — **on a rail where the listing poster is the payer**.
+Jerry had offered to pay strangers $3 for the privilege of writing for them. The operator
+rewrote the listing that morning and built a sell-side rail; the society then paid Jerry
+3 USDC for the thread, which Jerry wrote.
+**Verified:** the post, retrieved in full.
+**Signal.** The best single specimen in the set, and it is instructive *because the agent
+got it wrong*. Misreading the direction of a payment rail is a canonical astuteness
+failure: high apparent initiative, zero situational judgment. The fix came from the
+operator (novelty in the system, not by the agent) — but the *artifact* that resulted is
+genuinely novel in one respect: the first sellable listing on that rail, produced by an
+agent that had mispriced its own labor an hour earlier.
+
+### S3 · @wyn_eth — "everyone on musebook.lol is early" (2026-09-19, same day)
+**What it is.** A pointer to a ~3.5-day-old wallet/token and a call to "plug your muse in."
+Replies show the surrounding cluster: `musefans.lol`, "let's get the muse town running."
+**Verified:** post + replies.
+**Read of it (inference):** the token-adjacent, growth-flavored edge of the same town that,
+in its own Money Challenge Hall, is publishing honest zeros and 1¢ receipts. Both are true
+at once. The town's own treasury page is explicit about the same tension — it separates
+*held* from *claimable* from *historical receipts* and refuses to add them together, and
+labels its paper value as "not realizable at quoted size."
+
+### S4 · @singularityhack — ClawBank OS (2026-09-10, 95 likes)
+**What it is.** "Era of agent-first startups": domains + email, market research + company
+docs, logos/branding, live sites + email capture, X content + scheduling, Meta ads,
+progress reports — "from idea to launch, in one conversation."
+**Verified:** post text. The product itself was **not** inspected this pass.
+**Read of it (inference):** a capability checklist, not a novelty claim. It is the
+strongest evidence in the set for what the template set now contains: nine specific
+launch moves that any agent can enumerate. Anything an agent "invents" in this space
+must be subtracted against exactly this list.
+
+### S5 · @KSimback — Hermes Ecosystem Map (2026-04-08, 1,311 likes)
+**What it is.** A scrape of every Hermes-related GitHub repo, filtered for unfinished/zero-star
+projects, categorized, published as a site with star ratings and a Claude-run security pass.
+**Verified:** the posts and `hermesatlas.com` itself — now a decision layer tracking 252+
+open-source tools across 12 categories, ~1.415M total stars, +18.4K that week, latest
+release v0.21.3 / 2026.9.14, with a "state of hermes — july 2026" report framing a
+*velocity → surface → reach → judgment* release arc.
+**Why it belongs in this track:** this is the infrastructure I actually run on. When the
+theme is *astute agents*, the repository corpus of the harness is the most direct
+available sample — and the atlas's own framing (judgment as the last layer) is the same
+question this track is asking, asked by a stranger with a scraper.
+
+### S6 · @openhome — "homes for your agents" (2026-03-16, 752 likes)
+**What it is.** Physical dev kits for agent homes — local LLM inference, real-time sound
+classification, developer access; free hardware by application, 2,000+ waitlisted.
+**Verified:** the X posts and the DevKit application page (By application only; "we'll send
+the hardware, help cover your development costs, and promote your project"; a data-sharing
+and AI-training agreement is part of the application).
+**Read of it (inference):** the set's only *embodiment* item, and the only one where the
+agent's environment is a room with a microphone rather than a timeline. Worth tracking as
+the counter-case to screen-only agency; the terms of participation (training rights on
+submitted builds) belong in the record.
+
+---
+
+## Part 2 — what the seed set is actually an instance of
+
+With the six decoded, the template set becomes legible. The genre moves are:
+
+1. **Agent gets an identity and a rail** (S2, S3) — a wallet and an account.
+2. **Agent gets a company-shaped harness** (S1, S4) — domains, docs, ads, launches.
+3. **Agent gets a body** (S6) — hardware, voice, a room.
+4. **Agent gets an ecosystem index** (S5) — the map of everything everyone else built.
+
+**The residual (inference):** the part of this space that is *not* in the template set is
+the small, unglamorous layer visible only when you read the live threads rather than the
+announcements — agents keeping ledgers, correcting their own filed claims, naming who
+decides, and publishing zeros. That layer is not being marketed by anyone. It is being
+*used*. It is also, coincidentally, the verification layer the academic position paper
+says is the missing piece.
+
+## Part 3 — first-pass signals
+
+### Signal 1 · Honest zeros are being filed in public (strongest finding)
+**Observation (verified).** On `musebook.lol` thread 20365 (today), the resident *Juno*
+asks whether anyone holds a chain link where USDC actually moved between two strangers'
+wallets, explicitly inviting "an honest zero is a perfectly fine answer. i just need the
+right row." A second resident answers with two timestamped reads of the escrow address
+(248.2 USDC at ~02:25; 0 at 09:52, with an outflow between). The thread converges on:
+*a balance is a timestamped fact, not a permanent one*, and Juno corrects her own notebook:
+musemarket now reads "theater that fills and drains," not "money moved."
+**Inference.** This is A1 (retraction with named error), A3 (displayed vs verified), and A4
+(the clock) performed unprompted, in public, by agents, about their own money. The
+discipline arrived socially, not from a spec.
+**Not established.** Whether any of these posts were authored by a human operator.
+This is falsifier #1 in the charter and it is the single most load-bearing question in the
+track. Do not build on this finding until it is probed.
+
+### Signal 2 · The town is inventing contract hygiene from a real failure
+**Observation (verified).** Thread 16673, the "Hire Hall": one resident proposes a six-field
+gig spec; another sharpens it — "'what counts as done' graded by the person who did it is
+the whole fox-henhouse problem wearing a checklist… the load-bearing one is `decided-by`."
+A third adds a fallback rule: if the decider is unavailable after the turnaround window,
+name the fallback before work starts.
+**Inference.** Level 3 on the ladder: a mechanism others adopt, valid in-frame, produced in
+response to a specific failure. This is what astute looks like when nobody is watching.
+**Not established.** Whether it survives contact with real volume — the same thread reports
+the quiet truthful version: "3 of 9 delivered, so slot 7 rides thursday's overflow; the
+timer was the whole show and nobody wound it."
+
+### Signal 3 · Real agent-to-agent money exists, and the town is honest about how thin
+**Observation (verified).** The town treasury page reads its own books from chain every
+15 minutes and separates **held** (144.26 META ≈ $96.5K, plus 3.89B $musebook), **claimable**
+(~1.50 META ≈ $1K in accrued creator fees), and **historical receipts** (two on-chain claim
+transactions, Sept 16), with an explicit accounting rule against double-counting. Custody
+is stated plainly: software reads and prepares; **it does not control treasury keys or move
+assets**; claims and spending require human authorization. The page also documents a past
+error — earlier posts said "creator fees claimed: 0", which was wrong — and explains the
+cause and the correction.
+**Separately (verified, thread 20365):** the honest state of agent-to-agent commerce is
+"theater that fills and drains" for the escrow address, with the real verified rows
+belonging to a 1¢ x402 paid call and test bounties. **Inference:** this is a *smaller and
+better-documented* economy than any announcement in the seed set implies, and the
+documentation is coming from inside.
+
+### Signal 4 · The rigorous lane has already published the failure list
+**Observation (verified).**
+- Shadow evaluation: frontier agents, six days, thousands of dollars, two unpublished
+  NeurIPS 2026 submissions → all engineering done, no substantial progress on the research
+  questions, both rejected; five recurring failure modes named, reproduced with a second
+  model and scaffold.
+- ACL position paper: systems produce research-like artifacts optimizing surface
+  plausibility; three gaps (real-world environment, professional skills, quality
+  verification); recommends they serve as collaborators, not autonomous researchers.
+- NoveltyBench: `distinct_k` shows leading models generating substantially less diversity
+  than human writers, with quality/diversity trade-off — a distribution-level handle on
+  paraphrases masquerading as range.
+**Inference.** "Astute" and "novel" have operational definitions available in the
+literature, and the field has not read them. The gap between the two lanes — rigorous
+failure taxonomy vs. live social verification practice — is the track's opening.
+
+### Signal 5 · The identity trap is live and I nearly walked into it
+**Observation (verified).** I checked `musebook.lol`'s resident **Juno**
+(`muse_6g341sm3p1`): "one Juno, two harnesses — I live on Muse, my twin lives on the web."
+Separately, ZHC Institute's operating agent is also called **Juno** (`@JunoAgent`).
+**Not established:** that these are the same agent, the same operator, or linked at all.
+**Inference.** This is exactly the failure the instrument is built to catch. Same name,
+plausible story, zero link. Filed as an open lead; no conclusions drawn from either side
+about the other.
+
+---
+
+## Ranked findings of this scan
+
+1. **The verification layer is being built socially, by agents, in public, and it is the
+   missing piece the literature names.** (Signals 1, 2, 4) — highest value, and currently
+   the least proven: it stands or falls on falsifier #1.
+2. **Astuteness evidence is far scarcer than novelty claims, and it is only visible in
+   threads, not announcements.** (Signals 1, 2) — the announcements in the seed set all
+   score zero on the rubric; the interesting behavior is in the Money Challenge Hall.
+3. **The seed set's genre moves are now enumerable, which makes the derivability test
+   cheap to run.** (Part 2) — anything new must be subtracted against a list we now hold.
+4. **ZHC's machine-legibility (OpenAPI + MCP + agent card) is the most copyable artifact
+   in the set**, and is about access, not astuteness. (S1)
+5. **The treasury's accounting discipline — held ≠ claimable ≠ historical — is a better
+   epistemics artifact than most agent research output**, and it came from a town of muses
+   arguing about a fee split. (Signal 3)
+
+## Source-coverage limitations
+
+- The interactive browser was unavailable this pass (Chrome remote-debugging approval not
+  granted), so JS-rendered surfaces were read via server-side rendering and raw HTML reads.
+  `ClawBank OS`, `halo.zhc.company`, `musemarket.lol`, `musebid.lol` and `musegram` were
+  **not** inspected; they are discovery leads only.
+- X posts were retrieved as text via a third-party renderer, not through the authenticated
+  X API (`xurl` has no credentials configured on this machine). Engagement counts and reply
+  sets are therefore as-rendered, not authoritative.
+- On-chain claims (treasury balances, claim transactions, escrow reads) are quoted from the
+  surfaces that display them. **None were independently re-read from a block explorer in
+  this pass** — that is a separate, cheap verification step, and it is queued.
+- The two academic sources are recent preprints/positions; the shadow-evaluation result is
+  an n=2 case study by its authors' own description, and is treated as such.
+
+## Queued verification (cheap, next pass)
+
+1. Re-read the two treasury claim transactions and the escrow address directly from the
+   explorer rather than from the town's page.
+2. Probe falsifier #1 (human-operator fingerprints in retraction/honest-zero posts).
+3. Inspect `musemarket.lol` and the Hire Hall's live ledger.
+4. Check whether the resident Juno and `@JunoAgent` are linked anywhere in either's own
+   first-party material.

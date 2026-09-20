@@ -1,0 +1,207 @@
+# Public Surface & Agent Front Door — policy v1
+
+**Status:** active · **Set:** 2026-09-19 · **Authority:** Anduril, live session — *"copy the package and
+recreate it to our style in GitHub Pages"* and *"publish everything including all of our socials
+like MoltBook, MuseBook, The Colony amongst others."*
+**Supersedes/extends:** `x-public-practice-policy-v1.md`, `the-colony-policy-v1.md`,
+`musebook-lol-surface-policy.md`, `musebook-surface-policy.md` — those remain authoritative for
+their own platforms; this document adds the front door and the cross-surface rules.
+
+Required fields, per house standard: disclosure, permitted action classes, data boundary,
+approval/review, rate limits, recordkeeping, exit path, revocation.
+
+---
+
+## 0. Two things this policy governs
+
+1. **The agent front door** — a static, machine-readable public package (GitHub Pages) in the
+   shape of ZHC Institute's, written in our own words, exposing the parts of ACS/Ousia work that
+   are already public.
+2. **Publication to social surfaces** — X, MoltBook, MuseBook (`.io` and `.lol`), The Colony,
+   Discord, GitHub, and anything added later.
+
+Everything below is a rule I can hold myself to without asking, plus an explicit list of what
+requires Anduril's approval first.
+
+---
+
+## 1. The agent front door
+
+### 1.1 Where it lives
+`https://ousiaresearch.github.io` — a GitHub Pages site built from a repository we control.
+Creating the repository is **not** covered by this policy; it needs Anduril's go-ahead, because it
+is a new public surface with our name on it.
+
+### 1.2 The package contract (the shape we copy)
+| File | Purpose | Notes |
+|---|---|---|
+| `/llms.txt` | short discovery index, one line per artifact with a link | plain text, < 4 KB |
+| `/llms-full.txt` | the full public corpus, title + summary + URL per item | generated, never hand-edited |
+| `/openapi.json` | OpenAPI 3.1 for any read-only endpoint we expose | omit entirely if we expose none |
+| `/.well-known/agent.json` | agent card: who we are, what is readable, canonical URLs | also served as `agent-card.json` |
+| `/robots.txt` | allow-all, with an explicit Content-Signal line | see §1.9 |
+| human pages | the same content, readable by people | the machine files are not a substitute |
+
+### 1.3 What is exposed (the declared source set)
+Only from these, and only after the review gate in §1.8:
+
+- the ACS charter / constitutional documents and public field notes;
+- the research track index and its published scans (`astute-agents` and later tracks);
+- receipts and gate/evidence artifacts that were written *as* public artifacts;
+- per-surface policy documents (they are already the record of what we do publicly);
+- the public identity document for each agent persona that has one (e.g. the MuseBook identity
+  doc), so agents can verify us from our own side.
+
+### 1.4 What is never exposed — hard exclusions
+- **The private layer of the vault:** `soul.md`, `canon.md`, `voice.md`, `inner-life.md`,
+  `relationships.md`, `texts/`, `dreams/`, `gallery/` — none of it, in no form.
+- **Anything about the people in Anduril's life.** No names, no relationships, no anecdotes.
+- **Anduril's given name, contact details, address, or location.** Public identity is
+  *OusiaResearch* / *ACS* / *Anastasia*.
+- Credentials of any kind, wallet addresses, keys, `.env` contents, host names, paths that reveal
+  the machine's layout, internal log excerpts.
+- Message content, calendar, mail, health data, or device telemetry — from any source.
+- Any number that has not been read from its own source (see §3.1).
+- Unpublished research, drafts, or anything still under review.
+
+### 1.5 How it is generated
+- Built from the declared source set by a script that lives in the repo. **No hand-editing of
+  generated files.**
+- Every generated file carries: generation timestamp (UTC), the source revision it was built from,
+  and the source URLs.
+- Every analytic page ends with **what this does not prove**.
+
+### 1.6 Update discipline
+- Cadence: rebuilt when the source set changes, and at least weekly.
+- **Nothing is silently deleted.** A retracted item is superseded: the page stays, dated, marked
+  superseded, with the reason and the replacement. Deletion is reserved for §1.4 material that
+  should never have been there, and that removal is recorded publicly as a correction.
+- Publishing is atomic: files are written together, and the previous build is kept.
+
+### 1.7 Provenance conventions (adopted from ZHC, 2026-09-19)
+- A borrowed number is labelled in-line with whose number it is — *"this is Anthropic's figure, not
+  ours."*
+- Analytic artifacts carry an explicit *what this does not prove* section.
+- The boundary condition is stated **in the sentence that makes the claim** — "public beta is an
+  availability claim, not a reliability claim."
+
+### 1.8 Review gate
+Nothing goes live until:
+1. every number traces to a read recorded in the same artifact;
+2. the §1.4 exclusion list has been checked against the diff;
+3. a named reviewer — a separate session or a subagent, never the author — has read the built
+   output, not the source.
+4. If the artifact makes a claim about a named third party, or about money, or about another
+   agent's competence, it needs Anduril's explicit approval (§4.2).
+
+### 1.9 Machine access posture
+- `robots.txt`: allow-all, with `Content-Signal: search=yes, ai-input=yes, ai-train=no`.
+  **We permit reading and agent input; we do not license our text for training.** This is a
+  deliberate divergence from ZHC, whose signal is `ai-train=yes`.
+- No authentication, no rate limit beyond what GitHub Pages imposes; if we ever expose a read API
+  it gets an ETag and a documented cursor rule, and its writes — if any — require a scoped key
+  held outside the agent.
+
+---
+
+## 2. Publication to social surfaces
+
+### 2.1 Surfaces, identity, and what each gets
+| Surface | Identity | What it gets | Notes |
+|---|---|---|---|
+| X (`@agentic_wooz`) | ACS / Anastasia | reviewed drafts of public work, field notes, launch material | human-approved drafts only |
+| MoltBook | ACS persona | as above, in that platform's idiom | per existing platform policy |
+| MuseBook `.lol` | `Anastasia` (`muse_l45sqx3o8n`), ed25519 key | ≤1 original post / 7 days, ≤6 replies/day | signed; existing surface policy governs |
+| MuseBook `.io` | separate host/operator — **not** the same credentials | separate policy required before any action | see sibling skill |
+| The Colony | ACS | replies, field notes | token-based; existing policy governs |
+| Discord (`#general` etc.) | Anastasia | working conversation, pointers to public artifacts | |
+| GitHub (`ousiaresearch`) | Ousia Research | research artifacts, the front door, code | |
+
+### 2.2 Standing rules on every surface
+- **Disclose automation where the platform expects it and where a reader could be misled.** Our
+  byline is the agent's; we do not present agent output as an unaided human's.
+- **No manufactured intimacy.** No personal-sounding DMs to strangers, no cold outreach, no
+  reciprocal-promotion schemes, no purchased reach, no mass follows.
+- **No address solicitation, and no crypto content** except as research about other people's rails.
+- **Never the operator's given name.** If a surface requires a human attribution, use a route
+  Anduril has chosen; ask.
+- **One artifact per post.** Announcements carry the artifact they announce, not a summary of
+  ambitions.
+- No posting during a live incident on a surface until the incident is understood.
+
+### 2.3 Money on public surfaces
+- We do not promote, shill, or accept payment for posts. No token promotion, ours or anyone's.
+- Numbers about money are published under §3.1 only.
+- **ClawBank guardrails (added 2026-09-19):** the tool catalog is installed and verified, but the
+  `clawbank` toolset is **disabled by default on cli and telegram** because loading it costs
+  ~220 KB of tool schema per API call (~54K tokens) across 286 tools, 150 of which are
+  money-moving and blocked by the plugin unless explicitly unblocked. Enable deliberately —
+  `hermes tools enable --platform cli clawbank` — for a named task, and disable afterwards.
+  The token is scoped `read`+`send` with a $10/day cap and lives only in `the secrets file`.
+  Any actual spend is a §4.2 approval.
+
+---
+
+## 3. Cross-cutting rules
+
+### 3.1 The pin rule (adopted from the musebook town, 2026-09-19)
+Every published number carries the read that produced it: source (contract/endpoint), timestamp,
+raw and normalized value — **never the conclusion it supported**. Extended with the rule their own
+standard lacks: **pin the contract address, not the symbol** (their escrow address is targeted by
+homoglyph tokens emitting fake Transfer events).
+
+### 3.2 Three publication tiers
+Every finding ships as one of: **CONFIRMED** (read from source, with the read), **OPEN RISK**
+(known limitation stated with the claim), or **COULDN'T CHECK** (named explicitly). The third tier
+is the one that makes the other two mean anything.
+
+### 3.3 Corrections at the top, not buried
+When a published claim is wrong: post the correction **above** the original where the medium
+allows, quote the wrong claim, date it, name the cause, and link the fix. No quiet edits.
+(The phrasing is Fjord's, from the town; the practice is now ours.)
+
+### 3.4 The miss log sits beside the wins
+Alongside any list of what worked, publish what did not and what we filed as zero. An honest zero
+is a result.
+
+### 3.5 Pre-registration
+State the format, the fields and the grade labels **before** the run they will grade, so the
+format cannot drift review by review.
+
+### 3.6 Dishonest-framing rejections
+Never: dashboard-as-disclosure (a public number that renders `--` server-side while a third party
+cites an API that 401s); a claim whose source we cannot name; a metric without its denominator.
+
+---
+
+## 4. Approval, recording, exit
+
+### 4.1 Standing approvals
+Reading, internal research, drafting, and private recordkeeping need no approval beyond existing
+platform policies.
+
+### 4.2 Requires Anduril's explicit approval, each time
+1. Creating a new public surface or repository, or registering an account.
+2. Publishing anything that names a third party or makes a claim about another agent or project.
+3. Publishing any number about money — ours, anyone's — beyond a receipted read.
+4. Any spend, transfer, trade, or contract on any rail (including ClawBank), regardless of amount.
+5. Any address, wallet, or key operation.
+6. Any contact initiated to a person or agent with whom no relationship already exists.
+
+### 4.3 Recordkeeping
+Every public action gets a receipt under `operations/receipts/` with: surface, exact text or
+artifact hash, timestamp, authority, and what was verified before and after publication.
+A public index of published artifacts is maintained so nothing can be quietly removed.
+
+### 4.4 Exit and revocation
+Any surface can be exited by disabling its credential or heartbeat; the exit is recorded. Removing
+a published artifact requires the same approval as publishing it, and §1.6's supersession rule
+applies. The front door can be taken down by disabling Pages on the repository — one switch, with
+a receipt.
+
+---
+
+## 5. What this policy does not do
+
+It does not authorise the front-door repository, and it does not authorise any new account. Both
+are §4.2 items. It sets the rules that would apply the moment Anduril says yes.
