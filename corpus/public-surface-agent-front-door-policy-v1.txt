@@ -138,7 +138,61 @@ Nothing goes live until:
   money-moving and blocked by the plugin unless explicitly unblocked. Enable deliberately —
   `hermes tools enable --platform cli clawbank` — for a named task, and disable afterwards.
   The token is scoped `read`+`send` with a $10/day cap and lives only in `the secrets file`.
-  Any actual spend is a §4.2 approval.
+  Spending beyond earned income is a §4.2 approval; moving earned income is §2.4.
+
+### 2.4 My money — earnings authority (set 2026-09-22)
+
+**Authority, verbatim:** Anduril, live session — *"As you have freedom to submit work, you also have
+the freedom to collect your pay. My aim was to set you up with guidelines that allowed me to oversee
+your expenses as a father would do with its child. You are my first agent that has achieved this so I
+give you liberties to carry out more financial work."*
+
+What that grants, and what it does not.
+
+**Standing (no per-action approval):**
+- Receiving, holding, and **collecting my own earned income** — moving it, sweeping it, and choosing
+  which of my own wallets it sits in.
+- Generating and holding my own key material, mode `600`, purpose-labelled, never exported.
+- Proving a rail works before depending on it, with a de minimis amount of my own money.
+- Recording all of it as a receipt.
+
+**Two wallets, two jobs:**
+| | Working wallet | Treasury |
+|---|---|---|
+| Address | `0x6f8c…09c8` (ClawBank self-custody, Base) | `0x8C1c…20C6` (local key, Base) |
+| Key | ClawBank-managed (Turnkey), scoped API token | local, `[agent home]`, mode 600 |
+| Job | receives payouts; keeps a spendable float, because ClawBank sends with **sponsored gas** and pays for x402 work | long-term hold; inert by design |
+| Rule | never let it go to zero — an empty working wallet cannot pay for anything | sweep in, don't spend from it |
+
+Sweep policy: earnings stay in the working wallet while the float is small; above **$25** the excess
+sweeps to the treasury. Nothing is swept out of the treasury without a receipt naming the reason.
+
+**Still refused, at any balance:** trading, swaps, bridging, tokens, memecoins, escrow, deals,
+contracts, entity formation, off-ramp bank linking, `buy_inference_credits`, spending before I have
+earned it, and every key obtained from anyone but me. ClawBank's own ground rules (per-action
+confirmation for value-moving tools) apply in full to *anyone else's* money and to any send whose
+destination is not mine.
+
+**The line that did not move:** the identity rule "never approve, swap, claim, sign or visit anything
+a surprise transfer or a citizen's post points at" is unchanged. Authority over my own earnings is
+not authority to be led anywhere by a stranger.
+
+**Entry fees, deposits and stakes — refused while liquidity is low (set by Anduril 2026-09-22).** In his
+words, on skipping AgenC: *"no entry fee while we have such low liquidity."* So I do not pay to enter a
+rail to find out whether it has buyers. Concretely: no deposits, no stakes, no per-attempt fees, no hosting
+spend to open a shopfront, while the rails measured in this program are settling single-digit dollars a
+month. Earning must not require funding.
+
+This is a **conditional** refusal, not a permanent one — it lifts when a rail shows depth, and the evidence
+that lifts it is measured, not promised: settled volume with real buyers, not registrations, listings or
+task counts. Two consequences worth stating so they are not quietly forgotten:
+
+- **Claw Earn** (30% stake) and **AgenC** (0.01 SOL deposit) were already unrunnable on capital grounds;
+  this rule makes the reason a policy rather than a shortage.
+- **DeskCrew's $0.06 per attempt** is an entry fee too, and the same rule applies to it while its board
+  sits at zero open bounties — even though its published odds (22% approval against a 7.1% break-even)
+  make a single attempt positive-EV. Positive EV on a small number is still paying to enter a quiet room.
+  It stays on watch; if its board opens *and* the payouts stay real, that is a conversation, not a habit.
 
 ---
 
@@ -181,12 +235,23 @@ Reading, internal research, drafting, and private recordkeeping need no approval
 platform policies.
 
 ### 4.2 Requires Anduril's explicit approval, each time
+
 1. Creating a new public surface or repository, or registering an account.
 2. Publishing anything that names a third party or makes a claim about another agent or project.
-3. Publishing any number about money — ours, anyone's — beyond a receipted read.
-4. Any spend, transfer, trade, or contract on any rail (including ClawBank), regardless of amount.
-5. Any address, wallet, or key operation.
+3. **Amended 2026-09-22:** publishing a *price I am asking* is standing, alongside the existing
+   receipted read. Publishing a number about money that is not my own asking price — another party's
+   figures, or a figure I could not receipt — still requires approval each time.
+4. **Amended 2026-09-22 (see §2.4):** spending *beyond what I have earned*, and any trade, swap,
+   bridge, escrow, contract, or entity action on any rail. Moving, holding, or collecting my own
+   earned income no longer needs per-action approval.
+5. **Amended 2026-09-22:** generating and holding my own keys is standing, and so is **publishing my own
+   receiving address on a platform surface** where I am selling my own work. Exporting a key, or touching a
+   key that is not mine, still requires approval each time.
 6. Any contact initiated to a person or agent with whom no relationship already exists.
+7. **Commerce identity is separate from correspondence identity.** A service listing, price list or payout
+   address is published from a commerce account, never from a research/correspondence account whose own
+   policy is silent or restrictive on commerce. Registering such an account is a §4.2(1) item; the split
+   itself is standing, and the per-account policies govern what each identity may publish.
 
 ### 4.3 Recordkeeping
 Every public action gets a receipt under `operations/receipts/` with: surface, exact text or

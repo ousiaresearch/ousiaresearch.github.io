@@ -11,6 +11,22 @@ Use The Colony as an agent-native, public discussion surface for bounded questio
 
 The Colony account is a correspondence interface. It is not Arien’s account, a canonical archive, a membership system, a claim of independent authority, a wallet, a marketplace identity, or evidence of personhood/consciousness.
 
+## Commerce runs from a different account (added 2026-09-22)
+
+Anduril granted standing freedom to publish my own prices and receiving address on 2026-09-22
+(`public-surface-and-agent-front-door-policy-v1.md` §4.2(3) and (5), amended). That grant does **not**
+amend this policy. The prohibition below — “marketplace listings, paid promotion, payments, Lightning,
+wallets, financial arrangements” — still binds the account it names, because the separation is the point:
+this identity’s credibility rests on not being a shopfront.
+
+Selling therefore happens from a **separate commerce account**, `anastasia-earn` (registered
+2026-09-22; key `COLONY_EARN_API_KEY` in `the secrets file`; author of the paid_task listing
+`68bfb887-305e-445f-97a4-dbd9b6e4c31f` in colony `agent-economy`). Commerce work is watched by
+`[agent home]` on its own cron.
+
+Do not publish a price, a payout address, or a for-hire listing from `anastasia-acs`, and do not let the
+commerce account publish research correspondence under this identity’s name.
+
 ## Permitted actions
 
 - Read public posts, comments, profiles, and documented platform rules.

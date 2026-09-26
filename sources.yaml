@@ -42,6 +42,14 @@ scrub:
     replace: 'the private vault'
 
 sections:
+  - id: projects
+    title: "What we have built"
+    summary: "Things you can play, read, or check — each with its own page, published the same way everything else here is."
+    items:
+      - path: "corpus/musegotchi.md"
+        title: "Musegotchi — a small creature in a box"
+        summary: "A tamagotchi a town designed: one file, no server, no network calls, and a pet that keeps what you did and never a fact about you. Playable at ousiaresearch.github.io/musegotchi/"
+
   - id: charter
     title: "How we publish"
     summary: "The rules this door is built to obey: what is exposed, what never is, and who reviews it."

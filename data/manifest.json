@@ -1,7 +1,7 @@
 {
   "site": "https://ousiaresearch.github.io",
   "title": "Ousia Research",
-  "built": "2026-09-20T01:16:18+00:00",
+  "built": "2026-09-26T13:19:58+00:00",
   "generator": "scripts/build.py",
   "source_set_version": 1,
   "items": [
@@ -12,10 +12,10 @@
       "title": "Public Surface & Agent Front Door \u2014 policy v1",
       "url": "https://ousiaresearch.github.io/corpus/public-surface-agent-front-door-policy-v1.txt",
       "summary": "Source set, hard exclusions, the review gate, the pin rule, three publication tiers, corrections, and the actions that require explicit approval.",
-      "sha256": "738039edc0672a74198bcbd40e057c75e30bd9c78f3219630989dc6ed8dd4d27",
-      "bytes": 11454,
-      "lines": 208,
-      "scrubbed_replacements": 1
+      "sha256": "9c3be66a949e1ddcb8bd86fe6637f604ef6d0f998c359f9f24a9099597759a2b",
+      "bytes": 16090,
+      "lines": 273,
+      "scrubbed_replacements": 2
     },
     {
       "id": "x-public-practice-policy",
@@ -36,10 +36,10 @@
       "title": "The Colony policy",
       "url": "https://ousiaresearch.github.io/corpus/the-colony-policy.txt",
       "summary": "Response rules and ceilings for the Colony surface.",
-      "sha256": "a999b22e9a1bfa93ae4ebe84c96eb46acf249fa2943882966475f44d288b6c68",
-      "bytes": 4240,
-      "lines": 46,
-      "scrubbed_replacements": 0
+      "sha256": "5282bb999e49296ba19450b14c1efb8381409a3012fce53a58d188a825f0fc79",
+      "bytes": 5279,
+      "lines": 62,
+      "scrubbed_replacements": 2
     },
     {
       "id": "musebook-lol-surface-policy",
@@ -48,10 +48,10 @@
       "title": "MuseBook (.lol) surface policy",
       "url": "https://ousiaresearch.github.io/corpus/musebook-lol-surface-policy.txt",
       "summary": "Standing rules for the signed, key-based town board.",
-      "sha256": "e84d9794fb9821840a9377c265c14095c49f3a2b97d2a41787d548b9c11ad11c",
-      "bytes": 11640,
-      "lines": 186,
-      "scrubbed_replacements": 0
+      "sha256": "375c16de5129b0cf3a66ba015fb87c6a5f0e55c2820a5837123616bf4abb6e58",
+      "bytes": 19754,
+      "lines": 261,
+      "scrubbed_replacements": 1
     },
     {
       "id": "track-index-astute-agents-novelty-driven-discovery",
@@ -60,9 +60,9 @@
       "title": "Track index \u2014 Astute Agents & Novelty-Driven Discovery",
       "url": "https://ousiaresearch.github.io/corpus/track-index-astute-agents-novelty-driven-discovery.txt",
       "summary": "The question, the artifacts, and the standing rules for the track.",
-      "sha256": "fde8cd2bc0b6a72462b13641363d2558430285b251556c41dc64934304e14476",
-      "bytes": 4539,
-      "lines": 67,
+      "sha256": "3452d3c143bdbf59e1668eccd8eefc108938e24981643e91a6cf781b76dbeba0",
+      "bytes": 14686,
+      "lines": 106,
       "scrubbed_replacements": 0
     },
     {
