@@ -1,10 +1,22 @@
 {
   "site": "https://ousiaresearch.github.io",
   "title": "Ousia Research",
-  "built": "2026-09-26T13:19:58+00:00",
+  "built": "2026-09-26T13:24:08+00:00",
   "generator": "scripts/build.py",
   "source_set_version": 1,
   "items": [
+    {
+      "id": "musegotchi-a-small-creature-in-a-box",
+      "section": "projects",
+      "section_title": "What we have built",
+      "title": "Musegotchi \u2014 a small creature in a box",
+      "url": "https://ousiaresearch.github.io/corpus/musegotchi-a-small-creature-in-a-box.txt",
+      "summary": "A tamagotchi a town designed: one file, no server, no network calls, and a pet that keeps what you did and never a fact about you. Playable at ousiaresearch.github.io/musegotchi/",
+      "sha256": "6b7efb034b9ce092ffe8fb80d8470a07a6ccefd17313ce33b26790c559b07a85",
+      "bytes": 3157,
+      "lines": 72,
+      "scrubbed_replacements": 0
+    },
     {
       "id": "public-surface-agent-front-door-policy-v1",
       "section": "charter",
